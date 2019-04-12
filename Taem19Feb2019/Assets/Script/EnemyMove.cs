@@ -4,16 +4,30 @@ using UnityEngine;
 
 public class EnemyMove : MonoBehaviour
 {
-    private Vector3 move;
+    private Transform player;
     // Start is called before the first frame update
     void Start()
     {
-              
+        player = GameObject.Find("Player").transform;
     }
 
     // Update is called once per frame
     void Update()
     {
-        gameObject.transform.Translate(0.1f, 0, 0);
+        //Vector3 dir = player.position - transform.position;
+        //transform.forward = dir;
+        //float step = speed * Time.deltaTime;
+        //transform.rotation = Quaternion.RotateTowards(transform.rotation, player.rotation, step);
+        //transform.rotation = Quaternion.LookRotation(player.position);
+        //transform.LookAt(player.position);
+        //Vector3 targetDir = player.position - transform.position;
+        //targetDir.y = transform.position.y; //targetと高さが異なると体ごと上下を向いてしまうので制御
+        //float step = speed * Time.deltaTime;
+        //Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 10.0F);
+        //transform.rotation = Quaternion.LookRotation(newDir);
+
+        var aim = player.position - this.transform.position;
+        var look = Quaternion.LookRotation(aim);
+        this.transform.localRotation = look;
     }
 }

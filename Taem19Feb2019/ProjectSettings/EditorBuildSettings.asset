@@ -5,7 +5,28 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/SatouNa/Scene/Title.unity
+    guid: 2f2db0eb301b86742bee1ec4966d512b
+  - enabled: 1
+    path: Assets/SatouNa/Scene/StageSelect.unity
+    guid: c539cf44b8141964db0491e70bbd7e48
+  - enabled: 1
+    path: Assets/SatouNa/Scene/Tutorial.unity
+    guid: 90906be244b754742b7a1cec2822cb1b
+  - enabled: 1
+    path: Assets/SatouNa/Scene/GamePlay1.unity
+    guid: 9149fb5b9caa2df41bb59ab95c60abbd
+  - enabled: 1
+    path: Assets/SatouNa/Scene/GamePlay2.unity
+    guid: bd0761855ac8bb74dbfb1d470ceb2322
+  - enabled: 1
+    path: Assets/SatouNa/Scene/GamePlay3.unity
+    guid: c874c43005a259a4daaac138ee7a8f47
+  - enabled: 1
+    path: Assets/SatouNa/Scene/Result.unity
+    guid: 736851a047bbac5428ec59795715dbfb
   m_configObjects: {}

@@ -56,6 +56,8 @@
      <Compile Include="Assets\daiki\player.cs" />
      <Compile Include="Assets\daiki\PlayerFollowCamera.cs" />
      <Compile Include="Assets\daiki\Script\EnemyMove.cs" />
+     <Compile Include="Assets\LookAt.cs" />
+     <Compile Include="Assets\MisaillShipattack.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>C:/Users/K-017A1390/Documents/Team19Feb2019/Taem19Feb2019/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>

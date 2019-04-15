@@ -18,13 +18,13 @@ EditorBuildSettings:
     path: Assets/SatouNa/Scene/Tutorial.unity
     guid: 90906be244b754742b7a1cec2822cb1b
   - enabled: 1
-    path: Assets/SatouNa/Scene/GamePlay1.unity
+    path: Assets/SatouNa/Scene/Easy.unity
     guid: 9149fb5b9caa2df41bb59ab95c60abbd
   - enabled: 1
-    path: Assets/SatouNa/Scene/GamePlay2.unity
+    path: Assets/SatouNa/Scene/Head.unity
     guid: bd0761855ac8bb74dbfb1d470ceb2322
   - enabled: 1
-    path: Assets/SatouNa/Scene/GamePlay3.unity
+    path: Assets/SatouNa/Scene/Irregular.unity
     guid: c874c43005a259a4daaac138ee7a8f47
   - enabled: 1
     path: Assets/SatouNa/Scene/Result.unity

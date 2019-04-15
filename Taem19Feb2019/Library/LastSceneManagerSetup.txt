@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/SatouNa/Scene/StageSelect.unity
+- path: Assets/SatouNa/Scene/Easy.unity
   isLoaded: 1
   isActive: 1

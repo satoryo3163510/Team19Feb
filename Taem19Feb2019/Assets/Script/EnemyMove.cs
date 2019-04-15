@@ -26,8 +26,8 @@ public class EnemyMove : MonoBehaviour
         //Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 10.0F);
         //transform.rotation = Quaternion.LookRotation(newDir);
 
-        var aim = player.position - this.transform.position;
+        var aim = player.position - transform.position;
         var look = Quaternion.LookRotation(aim);
-        this.transform.localRotation = look;
+        transform.localRotation = look;
     }
 }

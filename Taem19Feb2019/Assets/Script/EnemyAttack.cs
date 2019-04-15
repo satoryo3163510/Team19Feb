@@ -5,29 +5,59 @@ using UnityEngine;
 
 public class EnemyAttack : MonoBehaviour
 {
-    public  GameObject bullet;
+    public GameObject bullet;
     private float timer;
-    public Transform muzzle;
+    public Transform[] muzzles;
     private float bSpeed = 100;
+    private EnemyMove enemyMove;
+    private bool attackStart;
     // Start is called before the first frame update
     void Start()
     {
         timer = 0;
+        enemyMove = new EnemyMove();
     }
 
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
-        Debug.Log(timer);
-        if (timer >= 0.1)
+        if (attackStart== true)
         {
-            GameObject bullets = Instantiate(bullet) as GameObject;
-            Vector3 force = gameObject.transform.right * bSpeed;
-            bullets.GetComponent<Rigidbody>().AddForce(force);
-            bullets.transform.position = muzzle.position;
-            Destroy(bullets, 5);
-            timer = 0;
+            timer += Time.deltaTime;
+            Debug.Log(timer);
+            if (timer >= 3)
+            {
+                for (int i = 0; i < muzzles.Length; i++)
+                {
+                    GameObject bullets = Instantiate(bullet) as GameObject;
+                    Vector3 force = gameObject.transform.right * bSpeed;
+                    bullets.GetComponent<Rigidbody>().AddForce(force);
+                    bullets.transform.position = muzzles[i].position;
+                    Destroy(bullets, 5);
+                }
+                timer = 0;
+            }
+        }
+    }
+    void OnTriggerEnter(Collider col)
+    {
+        if (col.CompareTag("Player"))
+        {
+            attackStart = true;
+        }
+    }
+    void OnTriggerStay(Collider col)
+    {
+        if (col.CompareTag("Player"))
+        {
+            attackStart = true;
+        }
+    }
+    void OnTriggerExit(Collider col)
+    {
+        if (col.gameObject.tag == "Player")
+        {
+            attackStart = false;
         }
     }
 }

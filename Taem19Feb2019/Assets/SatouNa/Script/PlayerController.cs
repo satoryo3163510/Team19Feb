@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         //船の現在速度取得
-        shipSpeed =Mathf.Abs(rb.velocity.z);
+        shipSpeed = Mathf.Abs(rb.velocity.z);
     }
 
     //物理演算で呼ばれる処理
@@ -61,15 +61,5 @@ public class PlayerController : MonoBehaviour
         float turn = move_x * turnspeed * Time.deltaTime;
         Quaternion turnrotation = Quaternion.Euler(0, turn, 0);
         rb.MoveRotation(rb.rotation * turnrotation);
-    }
-
-    //エネルギー弾
-    void Shoot()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            //
-            //GameObject bullets=Instantiate()
-        }
     }
 }

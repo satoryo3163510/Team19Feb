@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class MisaillShipattack : MonoBehaviour
 {
-    //発射間隔調整
-    public GameObject shellPrefad;
-    public float shotSpeed;
-    public AudioClip shotSound;
+    public Transform turret;
+    public Transform muzzle;
+    public GameObject bulletPrefad;
 
-    private float timeVeweenShot = 0.35f;
-    private float timer;
+    private float attackInterval = 2f;
+    private float turretRotationSmooth = 0.8f;
+    private float lastAttackTime;
+
+    private Transform playersenkan;
+    
     //ホーミング
     public Transform target;
     public Vector3 velcoity;
@@ -27,12 +30,26 @@ public class MisaillShipattack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
+        //戦艦の位置を取得できるようにする
+        playersenkan = GameObject.FindWithTag("PlayerSenkan").transform;
     }
 
     // Update is called once per frame
     void Update()
     {
+        Quaternion targetRotation = Quaternion.LookRotation(playersenkan.position - turret.position);
+        turret.rotation = Quaternion.Slerp(turret.rotation, targetRotation, Time.deltaTime * turretRotationSmooth);
+
+        //一定間隔でミサイルを発射する
+        if (Time.time > lastAttackTime + attackInterval)
+        {
+            Instantiate(bulletPrefad, muzzle.position, muzzle.rotation);
+            lastAttackTime = Time.time;
+        }
+
+
+
+
         //ホーミングミサイルプログラム
         if (target == null)
             return;
@@ -66,9 +83,7 @@ public class MisaillShipattack : MonoBehaviour
         position += velcoity * Time.deltaTime;
         transform.position = position;
 
-        //発射間隔プログラム
-        timer += Time.deltaTime;
-
+      
         
         
     }

@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class PlayerFollowCamera : MonoBehaviour
 {
-    private GameObject mainCamera;//メインカメラ格納用
+    //private GameObject mainCamera;//メインカメラ格納用
 
-    private GameObject playerObject;//回転の中心となるプレイヤー
+    //private GameObject playerObject;//回転の中心となるプレイヤー
 
-    private float rotateSpeed = 0.5f;//回転の速さ
+    //private float rotateSpeed = 0.5f;//回転の速さ
 
     // Start is called before the first frame update
     void Start()
     {
         //メインカメラと戦艦を取得
-        mainCamera = Camera.main.gameObject;
+        //mainCamera = Camera.main.gameObject;
 
-        playerObject = GameObject.Find("PlayerSenkan");
+        //playerObject = GameObject.Find("PlayerSenkan");
 
     }
 
@@ -25,17 +25,17 @@ public class PlayerFollowCamera : MonoBehaviour
     void Update()
     {
         //rotateCameraの呼び出し
-        rotateCamera();
+        //rotateCamera();
     }
 
     //カメラを回転させる関数
     private void rotateCamera()
     {
         //Vector3でX,Y方向の回転度合いの定義
-        Vector3 angl = new Vector3(Input.GetAxis("Mouse X") * rotateSpeed, Input.GetAxis("Mouse Y") * rotateSpeed, 0);
-        //transform.RtateAround()をしようしてメインカメラを回転させる
-        mainCamera.transform.RotateAround(playerObject.transform.position, Vector3.up, angl.x);
+        //Vector3 angl = new Vector3(Input.GetAxis("Mouse X") * rotateSpeed, Input.GetAxis("Mouse Y") * rotateSpeed, 0);
+        ////transform.RtateAround()をしようしてメインカメラを回転させる
+        //mainCamera.transform.RotateAround(playerObject.transform.position, Vector3.up, angl.x);
 
-        mainCamera.transform.RotateAround(playerObject.transform.position, transform.right, angl.y);
+        //mainCamera.transform.RotateAround(playerObject.transform.position, transform.right, angl.y);
     }
 }

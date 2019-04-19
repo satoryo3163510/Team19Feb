@@ -4,23 +4,26 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-
     private Rigidbody rb;
-    private float shipSpeed;
-    public float turnspeed; //途中
 
+    //船の速度
+    private float shipSpeed;
+
+    //船の旋回速度
+    [SerializeField]
+    private float turnspeed = 6f;
+
+    //船の後退速度上限
     [SerializeField]
     private float backMaxSpeed = 0.8f;
 
+    //船の全身速度上限
     [SerializeField]
     private float maxSpeed = 10f;
 
+    //船の出力
     [SerializeField]
     private float shipPower = 2f;
-
-    [SerializeField]
-    private float rotation = 2f;
-
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +34,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //船の現在速度取得
         shipSpeed =Mathf.Abs(rb.velocity.z);
     }
 
@@ -39,23 +43,33 @@ public class PlayerController : MonoBehaviour
     {
         float move_x = Input.GetAxis("Horizontal");
         float move_z = Input.GetAxis("Vertical");
+        
 
-        if (Input.GetKey(KeyCode.W))
+        //前後移動(速度制限付き)
+        if (move_z > 0)
         {
-            if(maxSpeed>shipSpeed)
-            rb.AddForce(0, 0, shipPower);
+            if (maxSpeed > shipSpeed)
+                rb.AddForce(transform.right*shipPower);
         }
-        if (Input.GetKey(KeyCode.S))
+        else if(move_z<0)
         {
             if (backMaxSpeed > shipSpeed)
-                rb.AddForce(0, 0,-shipPower );
+                rb.AddForce(transform.right*-shipPower);
         }
 
-        //旋回途中
+        //旋回
         float turn = move_x * turnspeed * Time.deltaTime;
-        Quaternion trunrotation = Quaternion.Euler(0, turn, 0);
-        rb.MoveRotation(rb.rotation * trunrotation);
+        Quaternion turnrotation = Quaternion.Euler(0, turn, 0);
+        rb.MoveRotation(rb.rotation * turnrotation);
+    }
 
-
+    //エネルギー弾
+    void Shoot()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            //
+            //GameObject bullets=Instantiate()
+        }
     }
 }

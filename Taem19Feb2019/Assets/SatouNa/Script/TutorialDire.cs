@@ -14,8 +14,8 @@ public class TutorialDire : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //左クリック
-        if (Input.GetMouseButtonDown(0))
+        //スペースキー
+        if (Input.GetKeyDown(KeyCode.Space))
             SceneManager.LoadScene("Result");
     }
 }

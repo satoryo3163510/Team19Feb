@@ -220,7 +220,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: c7baa88b8df656043ba6d25467a1c9fc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: c7baa88b8df656043ba6d25467a1c9fc, type: 3}
       propertyPath: m_LocalPosition.y
@@ -270,57 +270,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1011199344}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1187813976
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1187813975}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bed75bc31ecc95e40877ee9efaeb0a6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
---- !u!114 &1187813977
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1187813975}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfabacff06b86e545be33b4960a5002d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  turret: {fileID: 0}
-  muzzle: {fileID: 0}
-  bulletPrefad: {fileID: 0}
-  target: {fileID: 1434063882}
-  velcoity: {x: 0, y: 0, z: 0}
-  position: {x: 0, y: 0, z: 0}
-  period: 0
-  maxAcceleration: 100
-  randomPower: 0
-  randomPeriod: 0
 --- !u!54 &1187813979
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -406,22 +355,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1434063880}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1434063883
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1434063881}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49c4e6fbce63ac040ba8bb6bfd5cfdec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fire1String: 
-  pnString: 0
-  speed: 5
-  countTime: 0
 --- !u!54 &1434063885
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -558,6 +491,7 @@ GameObject:
   - component: {fileID: 1802933474}
   - component: {fileID: 1802933473}
   - component: {fileID: 1802933475}
+  - component: {fileID: 1802933476}
   m_Layer: 0
   m_Name: MisaillShip Shell
   m_TagString: Untagged
@@ -631,7 +565,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1802933468}
   m_LocalRotation: {x: -0, y: -0.73313105, z: -0, w: 0.6800875}
-  m_LocalPosition: {x: -1.16, y: 0.31, z: -2.25}
+  m_LocalPosition: {x: -0.76, y: 0.31, z: -2.25}
   m_LocalScale: {x: 0.20989597, y: 0.20989585, z: 0.20989597}
   m_Children: []
   m_Father: {fileID: 0}
@@ -684,10 +618,22 @@ MonoBehaviour:
   turret: {fileID: 0}
   muzzle: {fileID: 0}
   bulletPrefad: {fileID: 0}
-  target: {fileID: 0}
+  target: {fileID: 1434063882}
   velcoity: {x: 0, y: 0, z: 0}
   position: {x: 0, y: 0, z: 0}
   period: 0
   maxAcceleration: 100
   randomPower: 0
   randomPeriod: 0
+--- !u!114 &1802933476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1802933468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a67da8793f85524895345808af5a0f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

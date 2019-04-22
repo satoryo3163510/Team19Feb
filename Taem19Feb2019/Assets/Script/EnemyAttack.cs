@@ -7,6 +7,7 @@ public class EnemyAttack : MonoBehaviour
 {
     public GameObject bullet;
     private float timer;
+    public float kankaku = 3;
     public Transform[] muzzles;
     private float bSpeed = 100;
     private EnemyMove enemyMove;
@@ -21,11 +22,10 @@ public class EnemyAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        timer += Time.deltaTime;
         if (attackStart== true)
         {
-            timer += Time.deltaTime;
-            Debug.Log(timer);
-            if (timer >= 3)
+            if (timer >= kankaku)
             {
                 for (int i = 0; i < muzzles.Length; i++)
                 {

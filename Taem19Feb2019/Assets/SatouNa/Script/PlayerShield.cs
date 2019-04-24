@@ -6,9 +6,9 @@ using UnityEngine.UI;
 public class PlayerShield : MonoBehaviour
 {
     [SerializeField]
-    private float shieldHp = 1.0f;
+    private float shieldHp = 100.0f;
     [SerializeField]
-    private float stamina = 0.01f;
+    private float stamina = 1.0f;
     private bool isShield;
     public Slider shieldGauge;
     public GameObject Shield;

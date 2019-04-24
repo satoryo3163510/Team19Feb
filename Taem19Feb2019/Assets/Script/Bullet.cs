@@ -15,12 +15,11 @@ public class Bullet : MonoBehaviour
     {
 
     }
-    void OnCollisionEnter(Collision col)
+    void OnTriggerEnter(Collider col)
     {
-        //if (col.gameObject.tag == "Bullet")
-        //{
-        //    Destroy(col.gameObject);
-        //}
-        Destroy(gameObject);
+        if (col.gameObject.tag == "Player")
+        {
+            Destroy(gameObject);
+        }
     }
 }

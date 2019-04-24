@@ -10,35 +10,36 @@ public class PlayerShield : MonoBehaviour
     [SerializeField]
     private float stamina = 0.01f;
 
-    private Slider shield;
+    public Slider shieldGauge;
     private GameObject player;
-    private float ef_Timer = 2.0f;
-
-    public GameObject Ef_shield;
+    public GameObject Shield;
+    public bool isShield;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        shield = GameObject.Find("Shield").GetComponent<Slider>();
-        player = GameObject.Find("PlayerSenkan");
+        player = GameObject.Find("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButtonDown(0)&&Shield.activeSelf)
         {
-            shieldHp -= stamina*Time.deltaTime;
-            ef_Timer -= Time.deltaTime;
+            Shield.SetActive(!Shield.activeSelf);
+            isShield = false;
         }
-        if (ef_Timer < 0)
+        else if(Input.GetMouseButtonDown(0)&&Shield.activeSelf==false)
         {
-            GameObject efShield = Instantiate(Ef_shield, player.transform.position,
-               Quaternion.identity);
-            Destroy(efShield, 2.0f);
-            ef_Timer = 2.0f;
+            Shield.SetActive(!Shield.activeSelf);
+            isShield = true;
         }
-        shield.value = shieldHp;
+
+        if (isShield)
+        {
+            shieldHp -= stamina * Time.deltaTime;
+        }
+        shieldGauge.value = shieldHp;
     }
 }

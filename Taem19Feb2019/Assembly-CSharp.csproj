@@ -53,12 +53,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\daiki\player.cs" />
-     <Compile Include="Assets\daiki\PlayerFollowCamera.cs" />
-     <Compile Include="Assets\daiki\Script\EnemyMove.cs" />
-     <Compile Include="Assets\LookAt.cs" />
-     <Compile Include="Assets\MisaillShipattack.cs" />
-     <Compile Include="Assets\MisaillShipShell.cs" />
+     <Compile Include="Assets\daiki\Script\LookAt.cs" />
+     <Compile Include="Assets\daiki\Script\Misaill.cs" />
+     <Compile Include="Assets\daiki\Script\MisaillShipShell.cs" />
+     <Compile Include="Assets\daiki\Script\PlayerFollowCamera.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>C:/Users/K-017A1390/Documents/Team19Feb2019/Taem19Feb2019/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>

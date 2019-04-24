@@ -13,6 +13,7 @@ public class ScopeMode : MonoBehaviour
     private int zoom1 = 10;                 //拡大倍率（近）
     private int zoom2 = 20;                 //拡大倍率（遠）
     private bool zoomFlag;                  //切り替えフラグ
+    
 
 
     // Start is called before the first frame update

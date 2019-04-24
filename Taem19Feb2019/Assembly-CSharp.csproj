@@ -74,20 +74,20 @@
      <Compile Include="Assets\Script\EnemyAll.cs" />
      <Compile Include="Assets\Script\EnemyAttack.cs" />
      <Compile Include="Assets\Script\EnemyMove.cs" />
- <Reference Include="Unity.CollabProxy.Editor">
- <HintPath>C:/Users/K017A2103/Desktop/Feb2019team19/Taem19Feb2019/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Analytics.DataPrivacy">
- <HintPath>C:/Users/K017A2103/Desktop/Feb2019team19/Taem19Feb2019/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
- </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>C:/Users/K017A2103/Desktop/Feb2019team19/Taem19Feb2019/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.PackageManagerUI.Editor">
  <HintPath>C:/Users/K017A2103/Desktop/Feb2019team19/Taem19Feb2019/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
  </Reference>
+ <Reference Include="Unity.CollabProxy.Editor">
+ <HintPath>C:/Users/K017A2103/Desktop/Feb2019team19/Taem19Feb2019/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+ </Reference>
  <Reference Include="Unity.TextMeshPro">
  <HintPath>C:/Users/K017A2103/Desktop/Feb2019team19/Taem19Feb2019/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Analytics.DataPrivacy">
+ <HintPath>C:/Users/K017A2103/Desktop/Feb2019team19/Taem19Feb2019/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>C:/Program Files/Unity3.4f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

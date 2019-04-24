@@ -4,8 +4,11 @@
 TagManager:
   serializedVersion: 2
   tags:
+<<<<<<< HEAD
   - Enemy
   - Bullet
+=======
+>>>>>>> No01s
   - PlayerBullet
   layers:
   - Default
@@ -17,8 +20,13 @@ TagManager:
   - 
   - 
   - PostProcessing
+<<<<<<< HEAD
   - Enemy
   - Player
+=======
+  - Player
+  - PlayerBullet
+>>>>>>> No01s
   - 
   - 
   - 

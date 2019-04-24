@@ -4065,6 +4065,22 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.39028972
   m_Center: {x: -0.05, y: -0.00999999, z: 0}
+--- !u!114 &813614549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813614544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3f2b8de386aa9a42926c5d94bdfa186, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turnspeed: 6
+  backMaxSpeed: 0.8
+  maxSpeed: 10
+  shipPower: 2
 --- !u!1 &897125360
 GameObject:
   m_ObjectHideFlags: 0
@@ -4076,6 +4092,7 @@ GameObject:
   - component: {fileID: 897125363}
   - component: {fileID: 897125362}
   - component: {fileID: 897125361}
+  - component: {fileID: 897125364}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -4147,6 +4164,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 27.489002, y: 0, z: 0}
+--- !u!114 &897125364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 897125360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1153bfbc042d9484dbcea70677e50b27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1504384972
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4344,6 +4373,11 @@ PrefabInstance:
         type: 3}
       propertyPath: kankaku
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8753608795974773297, guid: 98e8545ea9721d441942d3f3d96903f4,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98e8545ea9721d441942d3f3d96903f4, type: 3}

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1259014212281185022}
   - component: {fileID: 4555808250801759521}
   - component: {fileID: 8953885535403455629}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: si-rudo
   m_TagString: Enemy
   m_Icon: {fileID: 0}

@@ -4,12 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-<<<<<<< HEAD
   - Enemy
   - Bullet
-=======
->>>>>>> No01s
-  - PlayerBullet
   layers:
   - Default
   - TransparentFX
@@ -19,14 +15,9 @@ TagManager:
   - UI
   - 
   - 
-  - PostProcessing
-<<<<<<< HEAD
   - Enemy
-  - Player
-=======
-  - Player
-  - PlayerBullet
->>>>>>> No01s
+  - 
+  - 
   - 
   - 
   - 

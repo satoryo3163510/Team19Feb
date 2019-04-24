@@ -17,6 +17,7 @@ public class Bullet : MonoBehaviour
     }
     void OnTriggerEnter(Collider col)
     {
+        //Playerと当たったら消す
         if (col.gameObject.tag == "Player")
         {
             Destroy(gameObject);

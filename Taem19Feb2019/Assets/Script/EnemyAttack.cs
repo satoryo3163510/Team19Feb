@@ -10,13 +10,11 @@ public class EnemyAttack : MonoBehaviour
     public float kankaku = 3;
     public Transform[] muzzles;
     private float bSpeed = 100;
-    private EnemyMove enemyMove;
     private bool attackStart;
     // Start is called before the first frame update
     void Start()
     {
         timer = 0;
-        enemyMove = new EnemyMove();
     }
 
     // Update is called once per frame

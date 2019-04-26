@@ -11,6 +11,7 @@ public class EnemyAttack : MonoBehaviour
     public Transform[] muzzles;
     private float bSpeed = 100;
     private bool attackStart;
+    private string player = "Player";
     // Start is called before the first frame update
     void Start()
     {
@@ -39,21 +40,21 @@ public class EnemyAttack : MonoBehaviour
     }
     void OnTriggerEnter(Collider col)
     {
-        if (col.CompareTag("Player"))
+        if (col.CompareTag(player))
         {
             attackStart = true;
         }
     }
     void OnTriggerStay(Collider col)
     {
-        if (col.CompareTag("Player"))
+        if (col.CompareTag(player))
         {
             attackStart = true;
         }
     }
     void OnTriggerExit(Collider col)
     {
-        if (col.gameObject.tag == "Player")
+        if (col.gameObject.tag == player)
         {
             attackStart = false;
         }

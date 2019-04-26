@@ -10,7 +10,7 @@ public class ChangeCamera : MonoBehaviour
     public GameObject fpsCamera;        //一人称カメラ
 
     private GameObject playerObject;    //回転の中心となるプレイヤー
-    private float rotateSpeed = 0.5f;   //回転の速さ
+    private float rotateSpeed = 1.0f;   //回転の速さ
     public Image sight;                 //ロックオンサイト
     public bool changeflag;
     
@@ -18,7 +18,7 @@ public class ChangeCamera : MonoBehaviour
     //開始時は三人称、ScopeModeはオフに
     void Start()
     {
-        playerObject = GameObject.Find("PlayerSenkan");
+        playerObject = GameObject.Find("Player");
         gameObject.GetComponent<ScopeMode>().enabled = false;
         sight.enabled = false;
         changeflag = true;

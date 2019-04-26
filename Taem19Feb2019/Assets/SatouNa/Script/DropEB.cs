@@ -16,7 +16,7 @@ public class DropEB : MonoBehaviour
     void Update()
     {
         dropTimer+=1.0f*Time.deltaTime;
-        if (dropTimer>5.0f)
+        if (dropTimer>3.0f)
         {
             GameObject Ebullets = Instantiate(enemyBullet, transform.position, Quaternion.identity);
             Destroy(Ebullets, 3f);

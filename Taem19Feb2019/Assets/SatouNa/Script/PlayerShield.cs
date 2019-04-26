@@ -5,65 +5,79 @@ using UnityEngine.UI;
 
 public class PlayerShield : MonoBehaviour
 {
-    [SerializeField]
-    private float shieldHp = 100.0f;
-    [SerializeField]
-    private float stamina = 1.0f;
-    private bool isShield;
-    public Slider shieldGauge;
     public GameObject Shield;
     private bool isScopeMode;
-
-
+    public Slider shieldGauge;
+    [SerializeField]
+    private float shieldHp = 1.0f;
+    [SerializeField]
+    private float maxShieldHp = 100.0f;
+    [SerializeField]
+    private float regene = 0.2f;
+    private float stamina = 1.0f;
 
     // Start is called before the first frame update
     void Start()
     {
+        shieldHp = maxShieldHp;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //右クリック時にfpsならシールドを展開しない
+        //右クリック時に一人称視点と三人称視点を切り替えるフラグ
         if (Input.GetMouseButtonDown(1))
-        {
-            isScopeMode = !isScopeMode;
-        }
+                isScopeMode = !isScopeMode;
+
         //左クリック時にシールドが展開しているか？
         if (Input.GetMouseButtonDown(0)&&isScopeMode==false)
-        {
-            ShieldActive();
-        }
+                ShieldActive();
 
-        
         //シールド展開中は徐々に耐久値が減少
-        if (isShield)
+        if (Shield.activeSelf)
         {
+            if (shieldHp < 0)
+            { 
+                shieldHp = 0;
+                Shield.SetActive(false);
+            }
+            else
             shieldHp -= stamina * Time.deltaTime;
+
+            //耐久値を反映
+            shieldGauge.value = shieldHp;
         }
-        //耐久値を反映
-        shieldGauge.value = shieldHp;
+        else
+            ShieldGenerate();
     }
 
     //シールドを展開していたら解除し、展開していないなら展開する
+    //シールドの耐久値が０なら解除せれる
     void ShieldActive()
     {
         if (Shield.activeSelf)
-        {
             Shield.SetActive(!Shield.activeSelf);
-            isShield = false;
-        }
-        else
-        {
+        else if (!Shield.activeSelf)
             Shield.SetActive(!Shield.activeSelf);
-            isShield = true;
-        }
     }
-    
+
     //シールドへのダメージ
     public void ShieldDamage(float damage)
     {
-        shieldHp -= damage;
+        if (shieldHp < 0)
+                shieldHp = 0;
+        else
+            shieldHp -= damage;
+        shieldGauge.value = shieldHp;
     }
-  
+
+    //シールドの自然回復
+    public void ShieldGenerate()
+    {
+        if (maxShieldHp >= shieldHp)
+            shieldHp += regene * Time.deltaTime;
+        else
+            shieldHp = maxShieldHp;
+        shieldGauge.value = shieldHp;
+    }
 }

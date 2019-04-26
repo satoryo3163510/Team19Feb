@@ -18,4 +18,9 @@ public class EasyDire : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
             SceneManager.LoadScene("Result");
     }
+
+    public void NextResult()
+    {
+        SceneManager.LoadScene("Result");
+    }
 }

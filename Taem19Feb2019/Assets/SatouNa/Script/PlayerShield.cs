@@ -9,36 +9,61 @@ public class PlayerShield : MonoBehaviour
     private float shieldHp = 1.0f;
     [SerializeField]
     private float stamina = 0.01f;
+    private bool isShield;
+    public Slider shieldGauge;
+    public GameObject Shield;
+    private bool isScopeMode;
 
-    private Slider shield;
-    private GameObject player;
-    private float ef_Timer = 2.0f;
-
-    public GameObject Ef_shield;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        shield = GameObject.Find("Shield").GetComponent<Slider>();
-        player = GameObject.Find("PlayerSenkan");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButton(0))
+        //右クリック時にfpsならシールドを展開しない
+        if (Input.GetMouseButtonDown(1))
         {
-            shieldHp -= stamina*Time.deltaTime;
-            ef_Timer -= Time.deltaTime;
+            isScopeMode = !isScopeMode;
         }
-        if (ef_Timer < 0)
+        //左クリック時にシールドが展開しているか？
+        if (Input.GetMouseButtonDown(0)&&isScopeMode==false)
         {
-            GameObject efShield = Instantiate(Ef_shield, player.transform.position,
-               Quaternion.identity);
-            Destroy(efShield, 2.0f);
-            ef_Timer = 2.0f;
+            ShieldActive();
         }
-        shield.value = shieldHp;
+
+        
+        //シールド展開中は徐々に耐久値が減少
+        if (isShield)
+        {
+            shieldHp -= stamina * Time.deltaTime;
+        }
+        //耐久値を反映
+        shieldGauge.value = shieldHp;
     }
+
+    //シールドを展開していたら解除し、展開していないなら展開する
+    void ShieldActive()
+    {
+        if (Shield.activeSelf)
+        {
+            Shield.SetActive(!Shield.activeSelf);
+            isShield = false;
+        }
+        else
+        {
+            Shield.SetActive(!Shield.activeSelf);
+            isShield = true;
+        }
+    }
+    
+    //シールドへのダメージ
+    public void ShieldDamage(float damage)
+    {
+        shieldHp -= damage;
+    }
+  
 }

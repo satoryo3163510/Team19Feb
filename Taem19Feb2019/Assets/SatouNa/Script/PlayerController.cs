@@ -17,9 +17,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float backMaxSpeed = 0.8f;
 
-    //船の全身速度上限
+    //船の前進速度上限
     [SerializeField]
-    private float maxSpeed = 10f;
+    private float maxSpeed = 1.2f;
 
     //船の出力
     [SerializeField]

@@ -9,10 +9,11 @@ public class ScopeMode : MonoBehaviour
     public Transform muzzle;                //発射する場所
     [SerializeField]
     private  float bulletSpeed = 1000f;     //弾速
-    private Camera fpsCamera;                //一人称カメラ
+    private Camera fpsCamera;               //一人称カメラ
     private int zoom1 = 10;                 //拡大倍率（近）
     private int zoom2 = 20;                 //拡大倍率（遠）
     private bool zoomFlag;                  //切り替えフラグ
+    
 
 
     // Start is called before the first frame update

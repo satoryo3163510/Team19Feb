@@ -60,5 +60,6 @@ public class ScopeMode : MonoBehaviour
         bullets.GetComponent<Rigidbody>().AddForce(force);
 
         bullets.transform.position = muzzle.position;
+        Destroy(bullets, 5);
     }
 }

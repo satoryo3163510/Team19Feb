@@ -13,6 +13,7 @@ public class ScopeMode : MonoBehaviour
     private int zoom1 = 10;                 //拡大倍率（近）
     private int zoom2 = 20;                 //拡大倍率（遠）
     private bool zoomFlag;                  //切り替えフラグ
+    private Vector3 center;                 //画面中央座標
     
 
 
@@ -21,6 +22,7 @@ public class ScopeMode : MonoBehaviour
     {
         fpsCamera = GetComponent<Camera>();
         fpsCamera.fieldOfView = zoom2;
+        center = new Vector3(Screen.width / 2, Screen.height / 2);
     }
 
     // Update is called once per frame
@@ -40,6 +42,7 @@ public class ScopeMode : MonoBehaviour
             else zoomFlag = false;
         }
 
+        //拡大縮小の遷移をスムーズに見せる
         if (zoomFlag == true&&fpsCamera.fieldOfView>zoom1)
         {
             fpsCamera.fieldOfView--;
@@ -53,12 +56,29 @@ public class ScopeMode : MonoBehaviour
     //射撃
     void Shoot()
     {
-        GameObject bullets = Instantiate(bullet) as GameObject;
-        Vector3 force;
-        force = this.gameObject.transform.forward * bulletSpeed;
+        //実弾処理、エフェクトに転用できるのでコメントアウト
+        //GameObject bullets = Instantiate(bullet) as GameObject;
+        //Vector3 force;
+        //force = this.gameObject.transform.forward * bulletSpeed;
+        //force = fpsCamera.transform.forward * bulletSpeed;
 
-        bullets.GetComponent<Rigidbody>().AddForce(force);
+        //bullets.GetComponent<Rigidbody>().AddForce(force);
 
-        bullets.transform.position = muzzle.position;
+        //bullets.transform.position = muzzle.position;
+
+        //レーザー射撃
+        Ray ray = fpsCamera.ScreenPointToRay(center);
+        RaycastHit hit;
+
+        //rayの可視化用デバッグ
+        Debug.DrawRay(ray.origin, ray.direction*10, Color.green, 5, false);
+
+        //rayがhitした場合
+        if (Physics.Raycast(ray,out hit, 100))
+        {
+            //destroyの時間差で演出を入れる
+            Destroy(hit.collider.gameObject);
+           
+        }
     }
 }

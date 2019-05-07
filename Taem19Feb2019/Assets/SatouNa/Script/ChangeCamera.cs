@@ -6,6 +6,9 @@ using UnityEngine.UI;
 
 public class ChangeCamera : MonoBehaviour
 {
+    //一人称カメラと三人称カメラの切り替え
+    //カメラの回転
+
     public GameObject mainCamera;       //三人称カメラ
     public GameObject fpsCamera;        //一人称カメラ
 

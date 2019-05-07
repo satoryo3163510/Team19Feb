@@ -5,12 +5,12 @@ using UnityEngine.UI;
 
 public class PlayerHp : MonoBehaviour
 {
+    //プレイヤーのhp,hpゲージ関係
     [SerializeField]
     private float playerHp;
     [SerializeField]
     private float maxHp = 100f;
     public Slider hpGauge;
-    private bool isDead;
     private EasyDire ED;
     private GameObject ed;
 
@@ -31,7 +31,6 @@ public class PlayerHp : MonoBehaviour
         //プレイヤーのHpが0以下でリザルトへ
         if (playerHp <= 0)
         {
-            isDead = true;
             ED.NextResult();
         }
     }

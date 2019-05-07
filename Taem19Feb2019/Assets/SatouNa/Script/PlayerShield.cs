@@ -5,16 +5,17 @@ using UnityEngine.UI;
 
 public class PlayerShield : MonoBehaviour
 {
-    public GameObject Shield;
-    private bool isScopeMode;
-    public Slider shieldGauge;
+    //プレイヤーのシールド,シールドゲージ関係
+    public GameObject Shield;               //シールドの実体
+    private bool isScopeMode;               //一人称カメラの状態
+    public Slider shieldGauge;              //シールドゲージ
     [SerializeField]
-    private float shieldHp = 1.0f;
+    private float shieldHp;                 //シールドの残量
     [SerializeField]
-    private float maxShieldHp = 100.0f;
+    private float maxShieldHp;              //シールドの最大値
     [SerializeField]
-    private float regene = 0.2f;
-    private float stamina = 1.0f;
+    private float regene;                   //自然回復量
+    private float stamina = 1.0f;           //展開時消費量
 
     // Start is called before the first frame update
     void Start()

@@ -19,7 +19,7 @@ public class EnemyDrop : MonoBehaviour
         Destroy(gameObject);
     }
 
-    void OnTriggerEnter(Collision other)
+    void OnTriggerEnter(Collider other)
     {
         Destroy(gameObject);
     }

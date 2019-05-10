@@ -6,16 +6,17 @@ public class ScopeMode : MonoBehaviour
 {
     //射撃に関するスクリプト
     public GameObject bullet;               //発射するオブジェクト
-    public Transform muzzle;                //発射する場所
+    public Transform[] fpsCamera_s;         //発射する場所
     [SerializeField]
     private  float bulletSpeed = 1000f;     //弾速
     private Camera fpsCamera;               //一人称カメラ
     private int zoom1 = 10;                 //拡大倍率（近）
     private int zoom2 = 20;                 //拡大倍率（遠）
     private bool zoomFlag;                  //切り替えフラグ
-    private Vector3 center;                //画面中央座標
+    private Vector3 center;                 //画面中央座標
     private EnemyHp EH;
-    private GameObject enemy;
+    private bool shootOk;
+    public float countTime;
 
 
     // Start is called before the first frame update
@@ -24,17 +25,25 @@ public class ScopeMode : MonoBehaviour
         fpsCamera = GetComponent<Camera>();
         fpsCamera.fieldOfView = zoom2;
         center = new Vector3(Screen.width / 2, Screen.height / 2);
-        enemy = GameObject.FindWithTag("Enemy");
-        EH = enemy.GetComponent<EnemyHp>();
+        shootOk = true;
     }
 
     // Update is called once per frame
     void Update()
     {
         //左クリックで射撃
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0)&&shootOk==true)
         {
             Shoot();
+            countTime = 0;
+            shootOk = false;
+        }
+
+        if (!shootOk)
+        {
+            countTime += Time.deltaTime;
+            if (countTime >= 3)
+                shootOk = true;
         }
 
         //拡大倍率の変更
@@ -59,30 +68,30 @@ public class ScopeMode : MonoBehaviour
     //射撃
     void Shoot()
     {
-        //実弾処理、エフェクトに転用できるのでコメントアウト
-        GameObject bullets = Instantiate(bullet) as GameObject;
-        Vector3 force;
-        //force = this.gameObject.transform.forward * bulletSpeed;
-        force = fpsCamera.transform.forward * bulletSpeed;
-
-        bullets.GetComponent<Rigidbody>().AddForce(force);
-
-        bullets.transform.position = fpsCamera.transform.position;
-
+        //エフェクト
+        for(int i = 0;i < 4; i++)
+        {
+            GameObject bullets = Instantiate(bullet) as GameObject;
+            bullets.transform.position = fpsCamera_s[i].transform.position;
+            bullets.transform.rotation = fpsCamera.transform.rotation;
+            Destroy(bullets, 3f);
+        }
+  
         //レーザー射撃
         Ray ray = fpsCamera.ScreenPointToRay(center);
         RaycastHit hit;
 
-        //rayの可視化用デバッグ
-        Debug.DrawRay(ray.origin, ray.direction*20, Color.green, 5, false);
-
         //rayがhitした場合
-        if (Physics.Raycast(ray,out hit, 20))
+        if (Physics.Raycast(ray,out hit, 15))
         {
             //destroyの時間差で演出を入れる
             //Destroy(hit.collider.gameObject);
-            
-            EH.EnemyDamage(40f);
+           if(hit.collider.gameObject.tag == "Enemy")
+            {
+                EH = hit.collider.GetComponent<EnemyHp>();
+                EH.EnemyDamage(40f);
+            }
+                
         }
     }
 }

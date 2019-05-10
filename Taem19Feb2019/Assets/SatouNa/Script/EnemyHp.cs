@@ -26,6 +26,6 @@ public class EnemyHp : MonoBehaviour
     {
         enemyHp -= damage;
         if (enemyHp <= 0)
-            Destroy(gameObject);
+            Destroy(gameObject,2f);
     }
 }

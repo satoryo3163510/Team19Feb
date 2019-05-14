@@ -53,7 +53,7 @@ public class PlayerShield : MonoBehaviour
     }
 
     //シールドを展開していたら解除し、展開していないなら展開する
-    //シールドの耐久値が０なら解除せれる
+    //シールドの耐久値が０なら解除される
     void ShieldActive()
     {
         if (Shield.activeSelf)
@@ -75,10 +75,13 @@ public class PlayerShield : MonoBehaviour
     //シールドの自然回復
     public void ShieldGenerate()
     {
-        if (maxShieldHp >= shieldHp)
-            shieldHp += regene * Time.deltaTime;
-        else
-            shieldHp = maxShieldHp;
-        shieldGauge.value = shieldHp;
+        if (maxShieldHp != shieldHp)
+        {
+            if (maxShieldHp >= shieldHp)
+                shieldHp += regene * Time.deltaTime;
+            else
+                shieldHp = maxShieldHp;
+            shieldGauge.value = shieldHp;
+        }
     }
 }

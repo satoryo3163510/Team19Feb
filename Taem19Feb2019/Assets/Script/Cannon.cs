@@ -9,7 +9,7 @@ public class Cannon : MonoBehaviour
     private float time;
     GameObject part1,part2;
     bool isShot;
-    public int interval;
+    public int interval = 30;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,8 +43,8 @@ public class Cannon : MonoBehaviour
                     part2.transform.rotation = CB.rotation;
                     part1.transform.Rotate(new Vector3(0, 90, 0));
                     part2.transform.Rotate(new Vector3(0, 90, 0));
+                    time = 0;
                 }
-                time = 0;
             }
         }
     }

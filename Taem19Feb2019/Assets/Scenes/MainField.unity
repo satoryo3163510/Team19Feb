@@ -349,8 +349,7 @@ PrefabInstance:
     - target: {fileID: 1234403185, guid: 063b6fe80e8fcd84b904ad2b9bda6905, type: 3}
       propertyPath: enemyShip
       value: 
-      objectReference: {fileID: 8753608795974773301, guid: 98e8545ea9721d441942d3f3d96903f4,
-        type: 3}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 063b6fe80e8fcd84b904ad2b9bda6905, type: 3}
 --- !u!1001 &613036867
@@ -411,8 +410,7 @@ PrefabInstance:
     - target: {fileID: 1234403185, guid: 063b6fe80e8fcd84b904ad2b9bda6905, type: 3}
       propertyPath: enemyShip
       value: 
-      objectReference: {fileID: 8753608795974773301, guid: 98e8545ea9721d441942d3f3d96903f4,
-        type: 3}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 063b6fe80e8fcd84b904ad2b9bda6905, type: 3}
 --- !u!1001 &672927927
@@ -473,8 +471,7 @@ PrefabInstance:
     - target: {fileID: 1234403185, guid: 063b6fe80e8fcd84b904ad2b9bda6905, type: 3}
       propertyPath: enemyShip
       value: 
-      objectReference: {fileID: 8753608795974773301, guid: 98e8545ea9721d441942d3f3d96903f4,
-        type: 3}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 063b6fe80e8fcd84b904ad2b9bda6905, type: 3}
 --- !u!1 &741291315
@@ -1213,21 +1210,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2579956478491996177, guid: 250fe2166235d1b459d32124d2094421,
-        type: 3}
-      propertyPath: gizmoColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2579956478491996177, guid: 250fe2166235d1b459d32124d2094421,
-        type: 3}
-      propertyPath: gizmoColor.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2579956478491996177, guid: 250fe2166235d1b459d32124d2094421,
-        type: 3}
-      propertyPath: gizmoColor.b
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2579956476826140642, guid: 250fe2166235d1b459d32124d2094421,
         type: 3}
       propertyPath: m_IsActive
@@ -1254,16 +1236,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2579956478491996183, guid: 250fe2166235d1b459d32124d2094421,
-        type: 3}
-      propertyPath: shieldGauge
-      value: 
-      objectReference: {fileID: 1294882817}
-    - target: {fileID: 2579956477054701487, guid: 250fe2166235d1b459d32124d2094421,
-        type: 3}
-      propertyPath: sight
-      value: 
-      objectReference: {fileID: 1743561641}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 250fe2166235d1b459d32124d2094421, type: 3}
 --- !u!1 &1504801564
@@ -1566,7 +1538,6 @@ GameObject:
   - component: {fileID: 1862317366}
   - component: {fileID: 1862317365}
   - component: {fileID: 1862317364}
-  - component: {fileID: 1862317368}
   m_Layer: 0
   m_Name: Kyoten
   m_TagString: Untagged
@@ -1646,19 +1617,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1862317368
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1862317363}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fe9d6a7354efbb4794807b6d4a52c46, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HP: 30
 --- !u!1 &2012857933
 GameObject:
   m_ObjectHideFlags: 0

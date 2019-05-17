@@ -29,6 +29,5 @@ public class Enemy_AirCraftCarrier : MonoBehaviour
                 timer = 0;
             }
         }
-        if (shipCount > 5) shipCount = 0;
     }
 }

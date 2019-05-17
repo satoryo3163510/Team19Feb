@@ -70,6 +70,7 @@
      <Compile Include="Assets\SatouNa\Script\TitleMove.cs" />
      <Compile Include="Assets\SatouNa\Script\TutorialDire.cs" />
      <Compile Include="Assets\Script\Bullet.cs" />
+     <Compile Include="Assets\Script\Cannon.cs" />
      <Compile Include="Assets\Script\Enemy_AirCraftCarrier.cs" />
      <Compile Include="Assets\Script\Enemy_shield.cs" />
      <Compile Include="Assets\Script\EnemyAll.cs" />

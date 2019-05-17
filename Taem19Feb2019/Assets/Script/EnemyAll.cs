@@ -5,7 +5,8 @@ using UnityEngine;
 public class EnemyAll : MonoBehaviour
 {
     //エネミー共通
-    public int HP;
+    [SerializeField]
+    int HP;
     bool death;
     // Start is called before the first frame update
     void Start()

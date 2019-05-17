@@ -13,6 +13,10 @@ public class PlayerHp : MonoBehaviour
     public Slider hpGauge;
     private EasyDire ED;
     private GameObject ed;
+    public GameObject EF_Die;
+    private int once;
+    public GameObject playerModele;
+    public GameObject EF_DamageHit;
 
     // Start is called before the first frame update
     void Start()
@@ -29,9 +33,13 @@ public class PlayerHp : MonoBehaviour
         hpGauge.value = playerHp;
 
         //プレイヤーのHpが0以下でリザルトへ
-        if (playerHp <= 0)
+        if (playerHp <= 0 &&once==0)
         {
-            ED.NextResult();
+            once++;
+            playerModele.SetActive(false);
+            var Die_ef = Instantiate(EF_Die,transform.position,Quaternion.identity);
+            Destroy(Die_ef,2f);
+            Invoke("GoResult", 2f);
         }
     }
 
@@ -43,6 +51,16 @@ public class PlayerHp : MonoBehaviour
     void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.tag == "Enemy")
-            PlayerDamage(10f);
+        {
+            var damageHit = Instantiate(EF_DamageHit, transform.position, Quaternion.identity);
+            Destroy(damageHit, 0.4f);
+            PlayerDamage(30f);
+        }
+           
+    }
+
+    void GoResult()
+    {
+        ED.NextResult();
     }
 }

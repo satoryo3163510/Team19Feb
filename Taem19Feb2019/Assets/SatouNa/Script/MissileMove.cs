@@ -5,34 +5,48 @@ using UnityEngine;
 public class MissileMove : MonoBehaviour
 {
     //ミサイルの挙動
-    //考え中
     [SerializeField]
-    private float secondSpeed;
+    private float firstSpeed;
     private Rigidbody rb;
-    private Vector3 force;
+    private Vector3 velosity;
+    private bool EnemyEntryFlag;
+    private Transform enemyPosition;
+    private Vector3 hormingStartPosition;
+    public Vector3 acceleration;
+    private float period = 0.6f;
+    public GameObject Ef_explosion;
 
 
     // Start is called before the first frame update
    void Start()
     {
         rb = GetComponent<Rigidbody>();
-        force = transform.forward * secondSpeed;
-        rb.AddForce(force,ForceMode.Impulse);
+        rb.AddForce(transform.forward*firstSpeed,ForceMode.Impulse);
     }
 
     void Update()
     {
-        
+        if (EnemyEntryFlag)
+        {
+            acceleration = Vector3.zero;
+            var diff = enemyPosition.position - transform.position;
+            acceleration += (diff - velosity * period) * 2f / (period * period);
+            if (acceleration.magnitude > 100f)
+            {
+                acceleration = acceleration.normalized * 100f;
+            }
+            period -= Time.deltaTime;
+            velosity += acceleration * Time.deltaTime;
+        }
     }
 
-    void OnTriggerStay(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Enemy")
         {
-            Vector3 aim = other.transform.position - transform.position;
-            Quaternion look = Quaternion.LookRotation(aim, Vector3.up);
-            transform.localRotation = look;
-            rb.AddForce(transform.forward);
+            hormingStartPosition = transform.position;
+            enemyPosition = other.transform;
+            EnemyEntryFlag = true;
         }
     }
 
@@ -40,8 +54,15 @@ public class MissileMove : MonoBehaviour
     {
         if (other.gameObject.tag == "Enemy")
         {
-            Debug.Log("hit!");
+            var hitEf = Instantiate(Ef_explosion,other.transform);
+            Destroy(hitEf, 1f);
+            Destroy(gameObject);
         }
+    }
+
+    void FixedUpdate()
+    {
+        rb.MovePosition(transform.position + velosity * Time.deltaTime);
     }
 
 }

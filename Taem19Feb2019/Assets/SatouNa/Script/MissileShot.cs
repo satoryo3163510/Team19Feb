@@ -21,8 +21,8 @@ public class MissileShot : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             GameObject missiles = Instantiate(missile, 
-                luncher.position, Quaternion.identity);
-            Destroy(missiles, 5f);
+                luncher.position, luncher.rotation);
+            Destroy(missiles, 10);
         }
     }
 }

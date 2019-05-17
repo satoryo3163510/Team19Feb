@@ -8,14 +8,14 @@ public class ResultDire : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Cursor.visible = true;
     }
     
     // Update is called once per frame
     void Update()
     {
-        //左クリック
-        if (Input.GetMouseButtonDown(0))
+        //スペースキー
+        if (Input.GetKeyDown(KeyCode.Space))
             SceneManager.LoadScene("Title");
     }
 }

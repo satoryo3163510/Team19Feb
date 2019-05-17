@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    //プレイヤーの移動、操作スクリプト
     private Rigidbody rb;
 
     //船の速度

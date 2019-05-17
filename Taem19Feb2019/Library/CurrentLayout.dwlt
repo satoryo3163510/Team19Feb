@@ -140,7 +140,7 @@ MonoBehaviour:
   m_MinSize: {x: 887, y: 498}
   m_MaxSize: {x: 16012, y: 14048}
   vertical: 0
-  controlID: 115
+  controlID: 10
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_MinSize: {x: 610, y: 498}
   m_MaxSize: {x: 12010, y: 14048}
   vertical: 1
-  controlID: 116
+  controlID: 11
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -191,7 +191,7 @@ MonoBehaviour:
   m_MinSize: {x: 610, y: 224}
   m_MaxSize: {x: 12010, y: 4024}
   vertical: 0
-  controlID: 117
+  controlID: 12
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -496,7 +496,7 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: 0.12353622, y: 0.66443044, z: -0.11268655, w: 0.7284042}
     speed: 2
-    m_Value: {x: 0.12353622, y: 0.66443044, z: -0.11268655, w: 0.7284042}
+    m_Value: {x: 0.123536214, y: 0.66443044, z: -0.11268655, w: 0.7284042}
   m_Size:
     m_Target: 14.757947
     speed: 2
@@ -506,7 +506,7 @@ MonoBehaviour:
     speed: 2
     m_Value: 0
   m_ShowGlobalGrid: 1
-  m_LastSceneViewRotation: {x: -0.07126385, y: -0.59309405, z: 0.052799065, w: -0.80023324}
+  m_LastSceneViewRotation: {x: 0.12353622, y: 0.66443044, z: -0.11268655, w: 0.7284042}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
@@ -644,7 +644,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: f63100009a0a0000722600004a3c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0

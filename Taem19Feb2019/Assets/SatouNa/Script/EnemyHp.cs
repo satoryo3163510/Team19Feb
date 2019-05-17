@@ -10,7 +10,7 @@ public class EnemyHp : MonoBehaviour
     [SerializeField]
     private float maxEnemyHp = 100f;
 
-    // Start is called before the first frame update
+    // hpの初期化
     void Start()
     {
         enemyHp = maxEnemyHp;

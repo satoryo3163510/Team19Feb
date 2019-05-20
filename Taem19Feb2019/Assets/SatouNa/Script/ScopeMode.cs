@@ -42,7 +42,7 @@ public class ScopeMode : MonoBehaviour
         if (!shootOk)
         {
             countTime += Time.deltaTime;
-            if (countTime >= 3)
+            if (countTime >= 2)
                 shootOk = true;
         }
 
@@ -91,7 +91,6 @@ public class ScopeMode : MonoBehaviour
                 EH = hit.collider.GetComponent<EnemyHp>();
                 EH.EnemyDamage(40f);
             }
-                
         }
     }
 }

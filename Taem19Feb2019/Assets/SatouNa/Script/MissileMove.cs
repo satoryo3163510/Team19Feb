@@ -10,7 +10,7 @@ public class MissileMove : MonoBehaviour
     private Rigidbody rb;
     private Vector3 velosity;
     private bool EnemyEntryFlag;
-    private Transform enemyPosition;
+    private Vector3 enemyPosition;
     private Vector3 hormingStartPosition;
     public Vector3 acceleration;
     private float period = 0.6f;
@@ -22,6 +22,7 @@ public class MissileMove : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         rb.AddForce(transform.forward*firstSpeed,ForceMode.Impulse);
+        EnemyEntryFlag = false;
     }
 
     void Update()
@@ -29,11 +30,11 @@ public class MissileMove : MonoBehaviour
         if (EnemyEntryFlag)
         {
             acceleration = Vector3.zero;
-            var diff = enemyPosition.position - transform.position;
+            var diff = enemyPosition - transform.position;
             acceleration += (diff - velosity * period) * 2f / (period * period);
-            if (acceleration.magnitude > 100f)
+            if (acceleration.magnitude > 40f)
             {
-                acceleration = acceleration.normalized * 100f;
+                acceleration = acceleration.normalized * 40f;
             }
             period -= Time.deltaTime;
             velosity += acceleration * Time.deltaTime;
@@ -45,7 +46,7 @@ public class MissileMove : MonoBehaviour
         if (other.tag == "Enemy")
         {
             hormingStartPosition = transform.position;
-            enemyPosition = other.transform;
+            enemyPosition = other.transform.position;
             EnemyEntryFlag = true;
         }
     }
@@ -54,9 +55,9 @@ public class MissileMove : MonoBehaviour
     {
         if (other.gameObject.tag == "Enemy")
         {
-            var hitEf = Instantiate(Ef_explosion,other.transform);
-            Destroy(hitEf, 1f);
             Destroy(gameObject);
+            var hitEf = Instantiate(Ef_explosion,other.transform);
+            Destroy(hitEf,1f);
         }
     }
 

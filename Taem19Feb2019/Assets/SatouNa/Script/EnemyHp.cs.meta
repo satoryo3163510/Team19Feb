@@ -3,7 +3,10 @@ guid: 879c63fd05d521344bba36970a8e6d4d
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - EF_explode_2: {fileID: 1570927096764274, guid: 643639841fb531e4ba8097fed4eb9ac7,
+      type: 3}
+  - EF_damage: {fileID: 144344, guid: d157fcfc73457ea44b9a125e5be375ca, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

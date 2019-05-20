@@ -6,6 +6,7 @@ public class ShieldCollision : MonoBehaviour
 {
     private PlayerShield PS;
     private GameObject player;
+    public GameObject EF_shieldHit;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +24,8 @@ public class ShieldCollision : MonoBehaviour
     {
         if (other.gameObject.tag == "Enemy" || gameObject.tag == "EnemyBullet")
         {
+            var hit = Instantiate(EF_shieldHit, transform.position, Quaternion.identity);
+            Destroy(hit, 1f);
             PS.ShieldDamage(10.0f);
         }
     }

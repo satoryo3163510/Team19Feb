@@ -57,17 +57,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b4c8de6d24e3d2489287f5c079e3056, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 8404609575921207444, guid: c4819e3d8efb93d4daa82a7403111497, type: 3}
+  bullet: {fileID: 1725837041045155758, guid: 386d31495f8a1e34196b0261ccb2f280, type: 3}
   phantombullet: {fileID: 771567580113592378, guid: bf24ffd2cba0d3f4fb2fa5670e4a4748,
     type: 3}
-  kankaku: 3
+  kankaku: 4
+  lifeTime: 2
   muzzles:
   - {fileID: 2083442718646167162}
   - {fileID: 2083442718248079513}
   - {fileID: 2083442719850177640}
   - {fileID: 2083442717913765081}
-  - {fileID: 2083442718005603437}
-  - {fileID: 2083442717879287989}
 --- !u!1 &2083442717796289723
 GameObject:
   m_ObjectHideFlags: 0
@@ -6644,3 +6643,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyHp: 0
   maxEnemyHp: 100
+  EF_explode_2: {fileID: 0}
+  EF_damage: {fileID: 0}

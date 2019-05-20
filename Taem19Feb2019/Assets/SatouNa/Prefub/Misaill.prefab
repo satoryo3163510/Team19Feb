@@ -26,9 +26,9 @@ GameObject:
   - component: {fileID: 1853090455558404255}
   - component: {fileID: 8678343572911373821}
   - component: {fileID: 5496519291617618811}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Misaill
-  m_TagString: Untagged
+  m_TagString: PlayerBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -118,6 +118,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: MisaillModeru
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ae14d1d6a1ee3db4bb66c6b029397faf, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: ae14d1d6a1ee3db4bb66c6b029397faf, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: ae14d1d6a1ee3db4bb66c6b029397faf, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: ae14d1d6a1ee3db4bb66c6b029397faf, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ae14d1d6a1ee3db4bb66c6b029397faf, type: 3}
       propertyPath: m_LocalPosition.x
       value: 21.26
@@ -173,6 +189,14 @@ PrefabInstance:
     - target: {fileID: 400000, guid: ae14d1d6a1ee3db4bb66c6b029397faf, type: 3}
       propertyPath: m_LocalScale.z
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: ae14d1d6a1ee3db4bb66c6b029397faf, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 100010, guid: ae14d1d6a1ee3db4bb66c6b029397faf, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae14d1d6a1ee3db4bb66c6b029397faf, type: 3}

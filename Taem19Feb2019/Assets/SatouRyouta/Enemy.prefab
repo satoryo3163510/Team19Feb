@@ -43,7 +43,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 6
+  m_Radius: 15
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5390153555564712329
 MonoBehaviour:
@@ -61,7 +61,7 @@ MonoBehaviour:
   phantombullet: {fileID: 771567580113592378, guid: bf24ffd2cba0d3f4fb2fa5670e4a4748,
     type: 3}
   kankaku: 4
-  lifeTime: 2
+  lifeTime: 4
   muzzles:
   - {fileID: 2083442718646167162}
   - {fileID: 2083442718248079513}
@@ -6643,5 +6643,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyHp: 0
   maxEnemyHp: 100
-  EF_explode_2: {fileID: 0}
-  EF_damage: {fileID: 0}
+  EF_explode_2: {fileID: 144344, guid: d157fcfc73457ea44b9a125e5be375ca, type: 3}
+  EF_damage: {fileID: 1202522996400206, guid: f87e7926fd589094b8a269e14b8bea5e, type: 3}

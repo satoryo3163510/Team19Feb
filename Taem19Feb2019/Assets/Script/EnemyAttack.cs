@@ -8,9 +8,9 @@ public class EnemyAttack : MonoBehaviour
     public GameObject bullet,phantombullet;
     private float timer;
     public float kankaku = 3;
-    public float lifeTime = 3;
+    public float lifeTime;
     public Transform[] muzzles;
-    private float bSpeed = 190;
+    private float bSpeed = 180;
     private bool attackStart;
     private string player = "Player";
     Bullet bulletaaaa;
@@ -35,7 +35,7 @@ public class EnemyAttack : MonoBehaviour
                     Vector3 force = gameObject.transform.right * bSpeed;
                     bullets1.GetComponent<Rigidbody>().AddForce(force);
                     bullets1.transform.position = muzzles[i].position;
-                    Destroy(bullets1, lifeTime);
+                    Destroy(bullets1, lifeTime-0.8f);
                 }
                 for (int i = 0; i < muzzles.Length; i++)
                 {

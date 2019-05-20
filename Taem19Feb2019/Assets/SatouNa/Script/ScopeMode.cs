@@ -80,12 +80,13 @@ public class ScopeMode : MonoBehaviour
         RaycastHit hit;
 
         //rayがhitした場合
-        if (Physics.Raycast(ray,out hit, 15))
+        if (Physics.Raycast(ray,out hit, 25))
         {
             //destroyの時間差で演出を入れる
             //Destroy(hit.collider.gameObject);
-           if(hit.collider.gameObject.tag == "Enemy")
+            if (hit.collider.gameObject.tag == "Enemy")
             {
+                Debug.Log(hit.collider.gameObject.name);
                 EH = hit.collider.GetComponent<EnemyHp>();
                 EH.EnemyDamage(40f);
             }

@@ -31,7 +31,7 @@ public class EnemyHp : MonoBehaviour
         {
             var ef_explode2 = Instantiate(EF_explode_2, transform.position, Quaternion.identity);
             Destroy(ef_explode2, 1f);
-            Destroy(gameObject, 0.6f);
+            Destroy(gameObject, 0.4f);
         }
         else
         {

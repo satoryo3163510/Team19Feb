@@ -11,7 +11,6 @@ public class MissileMove : MonoBehaviour
     private Vector3 velosity;
     private bool EnemyEntryFlag;
     private Vector3 enemyPosition;
-    private Vector3 hormingStartPosition;
     public Vector3 acceleration;
     private float period = 0.6f;
     public GameObject Ef_explosion;
@@ -45,7 +44,6 @@ public class MissileMove : MonoBehaviour
     {
         if (other.tag == "Enemy")
         {
-            hormingStartPosition = transform.position;
             enemyPosition = other.transform.position;
             EnemyEntryFlag = true;
         }

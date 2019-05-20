@@ -7,8 +7,6 @@ public class ScopeMode : MonoBehaviour
     //射撃に関するスクリプト
     public GameObject bullet;               //発射するオブジェクト
     public Transform[] fpsCamera_s;         //発射する場所
-    [SerializeField]
-    private  float bulletSpeed = 1000f;     //弾速
     private Camera fpsCamera;               //一人称カメラ
     private int zoom1 = 10;                 //拡大倍率（近）
     private int zoom2 = 20;                 //拡大倍率（遠）

@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MissileShot : MonoBehaviour
 {
     //ミサイル発射プログラム
     public GameObject missile;
     public Transform luncher;
+    public Text missileCount;
+    public Transform mainCamera_s;
     private int nowCartrige;
     private int maxCartrige = 20;
 
@@ -22,9 +25,10 @@ public class MissileShot : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space)&&nowCartrige!=0)
         {
             GameObject missiles = Instantiate(missile, 
-                luncher.position, luncher.rotation);
+                luncher.position, mainCamera_s.rotation);
             Destroy(missiles, 10);
             nowCartrige--;
+            missileCount.text = ("×"+nowCartrige);
         }
     }
 }

@@ -48,13 +48,13 @@ public class PlayerHp : MonoBehaviour
         playerHp -= damage;
     }
 
-    void OnCollisionEnter(Collision other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Enemy")
         {
             var damageHit = Instantiate(EF_DamageHit, transform.position, Quaternion.identity);
             Destroy(damageHit, 0.4f);
-            PlayerDamage(30f);
+            PlayerDamage(2f);
         }
            
     }

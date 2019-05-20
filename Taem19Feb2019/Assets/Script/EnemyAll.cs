@@ -25,7 +25,7 @@ public class EnemyAll : MonoBehaviour
     }
     void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.tag == "Bullet")
+        if (col.gameObject.tag == "PlayerBullet")
         {
             HP -= 1;
         }

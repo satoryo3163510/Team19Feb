@@ -28,4 +28,8 @@ public class EnemyHp : MonoBehaviour
         if (enemyHp <= 0)
             Destroy(gameObject,2f);
     }
+    public float Return()
+    {
+        return enemyHp;
+    }
 }

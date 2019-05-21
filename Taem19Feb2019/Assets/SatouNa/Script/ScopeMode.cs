@@ -80,7 +80,7 @@ public class ScopeMode : MonoBehaviour
         RaycastHit hit;
 
         //rayがhitした場合
-        if (Physics.Raycast(ray,out hit, 25))
+        if (Physics.Raycast(ray,out hit, 40))
         {
             //destroyの時間差で演出を入れる
             //Destroy(hit.collider.gameObject);

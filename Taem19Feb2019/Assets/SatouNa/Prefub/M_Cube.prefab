@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7705263199013504091}
   - component: {fileID: 7705263199013504088}
   - component: {fileID: 7705263199013504089}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: M_Cube
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHp: 0
-  maxEnemyHp: 100
+  maxEnemyHp: 50
   EF_explode_2: {fileID: 144344, guid: d157fcfc73457ea44b9a125e5be375ca, type: 3}
   EF_damage: {fileID: 1570927096764274, guid: 643639841fb531e4ba8097fed4eb9ac7, type: 3}
   isDead: 0

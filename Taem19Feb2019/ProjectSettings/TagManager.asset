@@ -19,8 +19,8 @@ TagManager:
   - Player
   - PlayerBullet
   - PlayerShield
-  - 
-  - 
+  - Enemy
+  - EnemyBullet
   - 
   - 
   - 

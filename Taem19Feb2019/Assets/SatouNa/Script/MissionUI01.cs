@@ -10,7 +10,7 @@ public class MissionUI01 : MonoBehaviour
     [SerializeField]
     private Vector3[] m_CubePos;
     private int count;
-    private GameObject m_Cubes;
+    private GameObject[] m_Cubes = new GameObject[3];
 
     // Start is called before the first frame update
     void Start()
@@ -25,12 +25,13 @@ public class MissionUI01 : MonoBehaviour
         //テキスト書き換え(Enterキー）
         if (Input.GetKeyDown(KeyCode.Return) && count == 0)
         {
-            misson01.text = ("先ずは正面のキューブに レーザーで攻撃してみましょう Enter-次へ");
+            misson01.text = ("まずは正面のキューブに レーザーで攻撃してみましょう Enter-次へ");
             count++;
             for (int i = 0; i < 3; i++)
             {
-                m_Cubes = Instantiate(m_Cube, m_CubePos[i], Quaternion.identity);
+                m_Cubes[i] = Instantiate(m_Cube, m_CubePos[i], Quaternion.identity);
             }
+
         }
         else if (Input.GetKeyDown(KeyCode.Return) && count == 1)
         {
@@ -54,14 +55,16 @@ public class MissionUI01 : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Return) && count == 5)
         {
-            misson01.text = ("レーザー攻撃のテストを終了します Enter-次へ");
+            misson01.text = ("以上でレーザー攻撃のテストを終了します Enter-次へ");
             count++;
         }
         else if (Input.GetKeyDown(KeyCode.Return) && count == 6)
         {
-            //キューブの一括削除がしたい。できないならスルー
-            //最後に代入したm_cubeが削除されている
-            Destroy(m_Cubes);
+            foreach(GameObject cubes in m_Cubes)
+            {
+                Destroy(cubes);
+            }
+            
             gameObject.GetComponent<MissionUI02>().enabled = true;
             gameObject.GetComponent<MissionUI01>().enabled = false;
         }

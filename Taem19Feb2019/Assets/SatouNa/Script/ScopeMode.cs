@@ -33,8 +33,8 @@ public class ScopeMode : MonoBehaviour
         if (Input.GetMouseButtonDown(0)&&shootOk==true)
         {
             Shoot();
-            countTime = 0;
             shootOk = false;
+            countTime = 0;
         }
 
         if (!shootOk)
@@ -80,8 +80,9 @@ public class ScopeMode : MonoBehaviour
         RaycastHit hit;
 
         //rayがhitした場合
-        if (Physics.Raycast(ray,out hit, 40))
+        if (Physics.Raycast(ray,out hit, 40f))
         {
+            Debug.Log(hit.collider.gameObject);
             //destroyの時間差で演出を入れる
             //Destroy(hit.collider.gameObject);
            if(hit.collider.gameObject.tag == "Enemy")

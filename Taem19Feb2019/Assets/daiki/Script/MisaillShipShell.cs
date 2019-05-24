@@ -31,7 +31,7 @@ public class MisaillShipShell : MonoBehaviour
         if (intervalTime >= enemyAttackInterval)
         {
             intervalTime = 0.0f;
-            enemyAttackTimer = 0; // タイマーを戻す
+            enemyAttackTimer = 0; // タイマーを戻す    
             enemyAttackInterval = Random.Range(5.0f, 10.0f);
             Instantiate(EnemyBullet, new Vector3(transform.position.x, transform.position.y, transform.position.z), quat);
         }

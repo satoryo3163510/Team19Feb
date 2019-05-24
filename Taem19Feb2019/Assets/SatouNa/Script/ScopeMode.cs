@@ -30,7 +30,7 @@ public class ScopeMode : MonoBehaviour
     void Update()
     {
         //左クリックで射撃
-        if (Input.GetMouseButtonDown(0)&&shootOk==true)
+        if (Input.GetMouseButtonDown(0) && shootOk == true)
         {
             Shoot();
             countTime = 0;
@@ -53,7 +53,7 @@ public class ScopeMode : MonoBehaviour
         }
 
         //拡大縮小の遷移をスムーズに見せる
-        if (zoomFlag == true&&fpsCamera.fieldOfView>zoom1)
+        if (zoomFlag == true && fpsCamera.fieldOfView > zoom1)
         {
             fpsCamera.fieldOfView--;
         }
@@ -67,26 +67,27 @@ public class ScopeMode : MonoBehaviour
     void Shoot()
     {
         //エフェクト
-        for(int i = 0;i < 4; i++)
+        for (int i = 0; i < 4; i++)
         {
             GameObject bullets = Instantiate(bullet) as GameObject;
             bullets.transform.position = fpsCamera_s[i].transform.position;
             bullets.transform.rotation = fpsCamera.transform.rotation;
             Destroy(bullets, 3f);
         }
-  
+
         //レーザー射撃
         Ray ray = fpsCamera.ScreenPointToRay(center);
         RaycastHit hit;
 
         //rayがhitした場合
-        if (Physics.Raycast(ray,out hit, 25))
+        if (Physics.Raycast(ray, out hit, 100f))
         {
+            Debug.Log(hit.collider.gameObject.name);
             //destroyの時間差で演出を入れる
             //Destroy(hit.collider.gameObject);
             if (hit.collider.gameObject.tag == "Enemy")
             {
-                Debug.Log(hit.collider.gameObject.name);
+
                 EH = hit.collider.GetComponent<EnemyHp>();
                 EH.EnemyDamage(40f);
             }

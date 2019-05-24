@@ -159,6 +159,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   originalPart: {fileID: 6433366907623162939, guid: b92b5c3d988ffc74cbd83c896921c717,
     type: 3}
+  phantom: {fileID: 0}
   interval: 30
 --- !u!114 &1844959231
 MonoBehaviour:
@@ -1088,8 +1089,8 @@ GameObject:
   - component: {fileID: 989745643460588605}
   - component: {fileID: 1888621789903155390}
   - component: {fileID: 5261842217287444963}
-  m_Layer: 8
-  m_Name: GameObject
+  m_Layer: 2
+  m_Name: searchCship
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

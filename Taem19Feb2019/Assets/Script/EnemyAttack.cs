@@ -13,12 +13,10 @@ public class EnemyAttack : MonoBehaviour
     private float bSpeed = 180;
     private bool attackStart;
     private string player = "Player";
-    Bullet bulletaaaa;
     // Start is called before the first frame update
     void Start()
     {
         timer = 0;
-        bulletaaaa = GetComponent<Bullet>();
     }
 
     // Update is called once per frame

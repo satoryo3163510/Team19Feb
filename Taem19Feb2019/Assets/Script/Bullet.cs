@@ -5,12 +5,10 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     Transform player;
-    bool aaaa;
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindWithTag("Player").transform;
-        aaaa = false;
     }
 
     // Update is called once per frame
@@ -26,11 +24,6 @@ public class Bullet : MonoBehaviour
         if (col.gameObject.tag == "Player")
         {
             Destroy(gameObject);
-            aaaa = true;
         }
-    }
-    public bool retrnaaaa()
-    {
-        return aaaa;
     }
 }

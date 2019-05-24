@@ -517,6 +517,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shield: {fileID: 8496452632690297601, guid: e0a1c59f322b0b1488c3c7c3b466a1f0, type: 3}
+  point: {fileID: 0}
 --- !u!114 &418752017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -558,6 +559,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyHp: 0
   maxEnemyHp: 100
+  EF_explode_2: {fileID: 0}
+  EF_damage: {fileID: 0}
 --- !u!1 &449293289
 GameObject:
   m_ObjectHideFlags: 0

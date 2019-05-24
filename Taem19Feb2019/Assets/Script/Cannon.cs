@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Cannon : MonoBehaviour
 {
-    public GameObject originalPart;
+    public GameObject originalPart,phantom;
     private Transform CT, CB;
     private float time;
     GameObject part1,part2;
@@ -44,6 +44,14 @@ public class Cannon : MonoBehaviour
                     part1.transform.Rotate(new Vector3(0, 90, 0));
                     part2.transform.Rotate(new Vector3(0, 90, 0));
                     time = 0;
+                    Destroy(part1, 5);
+                    Destroy(part2, 5);
+
+                    GameObject bullets = Instantiate(phantom) as GameObject;
+                    Vector3 force = gameObject.transform.right * 170;
+                    bullets.GetComponent<Rigidbody>().AddForce(force);
+                    bullets.transform.rotation = gameObject.transform.rotation;
+                    Destroy(bullets,5);
                 }
             }
         }
@@ -53,8 +61,6 @@ public class Cannon : MonoBehaviour
         if (col.gameObject.tag == "Player")
         {
             time = 0;
-            Destroy(part1);
-            Destroy(part2);
             isShot = false;
         }
     }

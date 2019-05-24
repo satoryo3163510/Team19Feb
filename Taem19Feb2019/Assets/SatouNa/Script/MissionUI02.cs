@@ -15,7 +15,7 @@ public class MissionUI02 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        misson01.text = ("ミサイルの動作確認をします。 Enter-次へ");
+        misson01.text = ("ミサイルの動作確認をします。");
         count = 0;
     }
 
@@ -25,7 +25,7 @@ public class MissionUI02 : MonoBehaviour
         //テキスト書き換え(Enterキー）
         if (Input.GetKeyDown(KeyCode.Return) && count == 0)
         {
-            misson01.text = ("自機の見えている状態で マウスを操作して 対象を画面の中心に捉えてください。 Enter-次へ");
+            misson01.text = ("自機の見えている状態で マウスを操作して 対象を画面の中心に捉えてください。");
             count++;
             for (int i = 0; i < 3; i++)
             {
@@ -35,30 +35,31 @@ public class MissionUI02 : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Return) && count == 1)
         {
-            misson01.text = ("スペースキーでミサイルを 発射します。 Enter-次へ");
+            misson01.text = ("スペースキーでミサイルを 発射します。");
             count++;
         }
         else if (Input.GetKeyDown(KeyCode.Return) && count == 2)
         {
-            misson01.text = ("ミサイルは直進し、敵を発見すると自動で追尾します。 Enter-次へ");
+            misson01.text = ("ミサイルは直進し、敵を発見すると自動で追尾します。");
             count++;
         }
         else if (Input.GetKeyDown(KeyCode.Return) && count == 3)
         {
-            misson01.text = ("ミサイルの数には限りがあり 左下で残りの弾数を確認できます Enter-次へ");
+            misson01.text = ("ミサイルの数には限りがあり 左下で残りの弾数を確認できます。");
             count++;
         }
         else if (Input.GetKeyDown(KeyCode.Return) && count == 4)
         {
-            misson01.text = ("ミサイルは補給できないので 使いどころに注意してください Enter-次へ");
+            misson01.text = ("ミサイルは補給できないので 使いどころに注意してください。");
             count++;
         }
         else if (Input.GetKeyDown(KeyCode.Return) && count == 5)
         {
-            misson01.text = ("以上でミサイルの動作テストを終了します Enter-次へ");
+            misson01.text = ("以上でミサイルの動作テストを終了します。");
             count++;
         }
-        else if (Input.GetKeyDown(KeyCode.Return) && count == 6)
+        else if (Input.GetKeyDown(KeyCode.Return) && count == 6
+            ||Input.GetKeyDown(KeyCode.Backspace))
         {
             foreach (GameObject cubes in m_Cubes)
             {

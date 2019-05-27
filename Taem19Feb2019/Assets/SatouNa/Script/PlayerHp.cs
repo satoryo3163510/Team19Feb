@@ -48,7 +48,7 @@ public class PlayerHp : MonoBehaviour
         playerHp -= damage;
     }
 
-    void OnCollisionEnter(Collision other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Enemy")
         {
@@ -56,7 +56,6 @@ public class PlayerHp : MonoBehaviour
             Destroy(damageHit, 0.4f);
             PlayerDamage(30f);
         }
-           
     }
 
     void GoResult()

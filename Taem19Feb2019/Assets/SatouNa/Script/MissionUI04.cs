@@ -13,7 +13,7 @@ public class MissionUI04 : MonoBehaviour
     [SerializeField]
     private Vector3[] m_CubePos;
     private int count;
-    private GameObject[] enemys = new GameObject[3];
+    private GameObject[] enemys = new GameObject[2];
 
     // Start is called before the first frame update
     void Start()
@@ -43,6 +43,7 @@ public class MissionUI04 : MonoBehaviour
         {
             misson01.text = ("タワーは敵のシールドによって守られています。 先に（仮称）シールド艦二隻を無力化してください。");
             count++;
+            enemys[1] = Instantiate(shieldEnemy, m_CubePos[1], Quaternion.identity);
         }
         else if (Input.GetKeyDown(KeyCode.Return) && count == 3)
         {
@@ -56,15 +57,15 @@ public class MissionUI04 : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Return) && count == 5)
         {
-            misson01.text = ("以上で説明を終了します。 ご武運を");
+            misson01.text = ("以上で説明を終了します。 Enter-出撃エリア選択画面に移行します。");
             count++;
         }
         else if (Input.GetKeyDown(KeyCode.Return) && count == 6
             || Input.GetKeyDown(KeyCode.Backspace))
         {
-            foreach (GameObject enemys in enemys)
+            foreach (GameObject enemy in enemys)
             {
-                Destroy(enemys);
+                Destroy(enemy);
             }
 
             gameObject.GetComponent<MissionUI00>().enabled = true;

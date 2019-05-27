@@ -33,6 +33,5 @@ public class Cannon : MonoBehaviour
             Destroy(bullets, 3f);
             timer = 0;
         }
-        
     }
 }

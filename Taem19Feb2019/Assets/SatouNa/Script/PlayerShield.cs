@@ -57,9 +57,13 @@ public class PlayerShield : MonoBehaviour
     void ShieldActive()
     {
         if (Shield.activeSelf)
+        {
             Shield.SetActive(!Shield.activeSelf);
+        }
         else if (!Shield.activeSelf)
+        {
             Shield.SetActive(!Shield.activeSelf);
+        }
     }
 
     //シールドへのダメージ

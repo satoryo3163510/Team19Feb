@@ -60,7 +60,6 @@ public class PlayerHp : MonoBehaviour
             Destroy(damageHit, 0.4f);
             PlayerDamage(2f);
         }
-           
     }
 
     void GoResult()

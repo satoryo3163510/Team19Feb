@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/MainField.unity
+- path: Assets/SatouNa/Scene/Tutorial.unity
   isLoaded: 1
   isActive: 1

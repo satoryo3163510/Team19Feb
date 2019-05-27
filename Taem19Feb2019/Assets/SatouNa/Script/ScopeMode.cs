@@ -15,14 +15,13 @@ public class ScopeMode : MonoBehaviour
     private EnemyHp EH;
     private bool shootOk;
     public float countTime;
-    AudioSource audio;
-    [Header("射撃")]
-    public AudioClip audioShot;
+    [SerializeField]
+    private float laserDamage;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        audio = GetComponent<AudioSource>();
         fpsCamera = GetComponent<Camera>();
         fpsCamera.fieldOfView = zoom2;
         center = new Vector3(Screen.width / 2, Screen.height / 2);
@@ -33,11 +32,11 @@ public class ScopeMode : MonoBehaviour
     void Update()
     {
         //左クリックで射撃
-        if (Input.GetMouseButtonDown(0) && shootOk == true)
+        if (Input.GetMouseButtonDown(0)&&shootOk==true)
         {
             Shoot();
-            countTime = 0;
             shootOk = false;
+            countTime = 0;
         }
 
         if (!shootOk)
@@ -56,7 +55,7 @@ public class ScopeMode : MonoBehaviour
         }
 
         //拡大縮小の遷移をスムーズに見せる
-        if (zoomFlag == true && fpsCamera.fieldOfView > zoom1)
+        if (zoomFlag == true&&fpsCamera.fieldOfView>zoom1)
         {
             fpsCamera.fieldOfView--;
         }
@@ -69,31 +68,26 @@ public class ScopeMode : MonoBehaviour
     //射撃
     void Shoot()
     {
-        audio.PlayOneShot(audioShot);
         //エフェクト
-        for (int i = 0; i < 4; i++)
+        for(int i = 0;i < 4; i++)
         {
             GameObject bullets = Instantiate(bullet) as GameObject;
             bullets.transform.position = fpsCamera_s[i].transform.position;
             bullets.transform.rotation = fpsCamera.transform.rotation;
             Destroy(bullets, 3f);
         }
-
+  
         //レーザー射撃
         Ray ray = fpsCamera.ScreenPointToRay(center);
         RaycastHit hit;
 
         //rayがhitした場合
-        if (Physics.Raycast(ray, out hit, 23f))
+        if (Physics.Raycast(ray,out hit, 40f))
         {
-            Debug.Log(hit.collider.gameObject.name);
-            //destroyの時間差で演出を入れる
-            //Destroy(hit.collider.gameObject);
-            if (hit.collider.gameObject.tag == "Enemy")
+           if(hit.collider.gameObject.tag == "Enemy")
             {
-
                 EH = hit.collider.GetComponent<EnemyHp>();
-                EH.EnemyDamage(40f);
+                EH.EnemyDamage(laserDamage);
             }
         }
     }

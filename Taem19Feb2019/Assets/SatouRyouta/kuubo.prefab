@@ -3088,8 +3088,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.16767837
-  m_Height: 0.8669137
+  m_Radius: 0.2
+  m_Height: 0.9
   m_Direction: 0
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1234403185
@@ -3134,6 +3134,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyHp: 0
   maxEnemyHp: 100
+  EF_explode_2: {fileID: 163064, guid: 2bdc186a2c521f1488fe14cb4a745323, type: 3}
+  EF_damage: {fileID: 1202522996400206, guid: f87e7926fd589094b8a269e14b8bea5e, type: 3}
 --- !u!1 &1234536810
 GameObject:
   m_ObjectHideFlags: 0

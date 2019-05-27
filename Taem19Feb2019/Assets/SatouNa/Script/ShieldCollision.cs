@@ -17,6 +17,7 @@ public class ShieldCollision : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        gameObject.transform.position = player.transform.position;
     }
 
     //シールドに敵が接触した
@@ -26,7 +27,7 @@ public class ShieldCollision : MonoBehaviour
         {
             var hit = Instantiate(EF_shieldHit, transform.position, Quaternion.identity);
             Destroy(hit, 1f);
-            PS.ShieldDamage(10.0f);
+            PS.ShieldDamage(2.0f);
         }
     }
 }

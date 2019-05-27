@@ -5,17 +5,17 @@ using UnityEngine;
 public class Enemy_shield : MonoBehaviour
 {
     public GameObject shield;
+    public Transform point;
+    GameObject kyotenshield;
     // Start is called before the first frame update
     void Start()
     {
-        GameObject kyoten = GameObject.Find("CapShip");
-        GameObject kyotenshield = Instantiate(shield,transform) as GameObject;
-        kyotenshield.transform.position = kyoten.transform.position + new Vector3(0, 0, 0.8f);
+        kyotenshield = Instantiate(shield,transform) as GameObject;
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        kyotenshield.transform.position = point.position;
     }
 }

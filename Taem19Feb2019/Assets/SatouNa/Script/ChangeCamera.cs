@@ -15,7 +15,7 @@ public class ChangeCamera : MonoBehaviour
     private GameObject playerObject;    //回転の中心となるプレイヤー
     private float rotateSpeed = 1.0f;   //回転の速さ
     public Image sight;                 //ロックオンサイト
-    public bool changeflag;
+    int changeflag;                     //boolの代わり0→false,1→true
     private Camera mainCameraView;
     
     // Start is called before the first frame update
@@ -27,7 +27,7 @@ public class ChangeCamera : MonoBehaviour
         mainCameraView = GetComponent<Camera>();
         mainCameraView.fieldOfView = 60;
         sight.enabled = false;
-        changeflag = true;
+        changeflag = 0;
     }
 
     // Update is called once per frame
@@ -57,6 +57,8 @@ public class ChangeCamera : MonoBehaviour
             mainCamera.transform.RotateAround(playerObject.transform.position, transform.right, angl.y);
             gameObject.GetComponent<ScopeMode>().enabled = false;
             sight.enabled = false;
+            changeflag = 0;
+            Debug.Log(changeflag + "a");
         }
         else if (fpsCamera.activeSelf)
         {
@@ -65,6 +67,16 @@ public class ChangeCamera : MonoBehaviour
             fpsCamera.transform.RotateAround(playerObject.transform.position, transform.right, angl.y);
             gameObject.GetComponent<ScopeMode>().enabled = true;
             sight.enabled = true;
+            changeflag = 1;
+            Debug.Log(changeflag + "a");
         }
+    }
+    /// <summary>
+    /// changeFlag返すん_(:3 」∠)_
+    /// </summary>
+    /// <returns></returns>
+    public int ReturnFlag()
+    {
+        return changeflag;
     }
 }

@@ -84,4 +84,8 @@ public class PlayerShield : MonoBehaviour
             shieldGauge.value = shieldHp;
         }
     }
+    public float ReturnShield()
+    {
+        return shieldHp;
+    }
 }

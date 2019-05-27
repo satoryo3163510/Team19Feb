@@ -13,10 +13,13 @@ public class EnemyAttack : MonoBehaviour
     private float bSpeed = 180;
     private bool attackStart;
     private string player = "Player";
+    AudioSource audio;
+    public AudioClip audioShot;
     // Start is called before the first frame update
     void Start()
     {
         timer = 0;
+        audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -45,6 +48,7 @@ public class EnemyAttack : MonoBehaviour
                     bullets.transform.Rotate(new Vector3(0, 90, 0));
                     Destroy(bullets, lifeTime);
                 }
+                audio.PlayOneShot(audioShot);
                 timer = 0;
             }
         }

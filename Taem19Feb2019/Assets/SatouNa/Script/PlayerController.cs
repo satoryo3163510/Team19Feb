@@ -26,10 +26,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float shipPower = 2f;
 
+    ChangeCamera changeCamera;
+    int aaa;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        changeCamera = GetComponentInChildren<ChangeCamera>();
+        changeCamera = new ChangeCamera();
     }
 
     // Update is called once per frame
@@ -37,6 +41,8 @@ public class PlayerController : MonoBehaviour
     {
         //船の現在速度取得
         shipSpeed = Mathf.Abs(rb.velocity.z);
+        aaa = changeCamera.ReturnFlag();
+        Debug.Log(aaa + "b");
     }
 
     //物理演算で呼ばれる処理
@@ -44,18 +50,38 @@ public class PlayerController : MonoBehaviour
     {
         float move_x = Input.GetAxis("Horizontal");
         float move_z = Input.GetAxis("Vertical");
-        
 
-        //前後移動(速度制限付き)
-        if (move_z > 0)
+        switch (aaa)
         {
-            if (maxSpeed > shipSpeed)
-                rb.AddForce(transform.right*shipPower);
-        }
-        else if(move_z<0)
-        {
-            if (backMaxSpeed > shipSpeed)
-                rb.AddForce(transform.right*-shipPower);
+            case 0:
+                Debug.Log(aaa);
+                //前後移動(速度制限付き)
+                if (move_z > 0)
+                {
+                    if (maxSpeed > shipSpeed)
+                        rb.AddForce(transform.right * shipPower);
+                }
+                else if (move_z < 0)
+                {
+                    if (backMaxSpeed > shipSpeed)
+                        rb.AddForce(transform.right * -shipPower);
+                }
+                break;
+            case 1:
+                Debug.Log(aaa);
+                //前後移動(速度制限付き)
+                if (move_z > 0)
+                {
+                    if (maxSpeed > shipSpeed)
+                        rb.AddForce(transform.right * shipPower*0);
+                }
+                else if (move_z < 0)
+                {
+                    if (backMaxSpeed > shipSpeed)
+                        rb.AddForce(transform.right * -shipPower*0);
+                }
+                break;
+
         }
 
         //旋回

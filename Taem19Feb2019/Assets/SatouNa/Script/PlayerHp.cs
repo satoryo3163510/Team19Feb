@@ -47,6 +47,10 @@ public class PlayerHp : MonoBehaviour
     {
         playerHp -= damage;
     }
+    public float ReturnHP()
+    {
+        return playerHp;
+    }
 
     void OnTriggerEnter(Collider other)
     {

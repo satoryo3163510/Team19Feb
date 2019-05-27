@@ -15,11 +15,14 @@ public class ScopeMode : MonoBehaviour
     private EnemyHp EH;
     private bool shootOk;
     public float countTime;
-
+    AudioSource audio;
+    [Header("射撃")]
+    public AudioClip audioShot;
 
     // Start is called before the first frame update
     void Start()
     {
+        audio = GetComponent<AudioSource>();
         fpsCamera = GetComponent<Camera>();
         fpsCamera.fieldOfView = zoom2;
         center = new Vector3(Screen.width / 2, Screen.height / 2);
@@ -66,6 +69,7 @@ public class ScopeMode : MonoBehaviour
     //射撃
     void Shoot()
     {
+        audio.PlayOneShot(audioShot);
         //エフェクト
         for (int i = 0; i < 4; i++)
         {

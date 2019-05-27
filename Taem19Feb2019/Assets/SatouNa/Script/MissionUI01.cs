@@ -15,7 +15,7 @@ public class MissionUI01 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        misson01.text=("レーザー射撃のテストを開始します。");
+        misson01.text=("レーザー射撃のテストを 開始します。");
         count = 0;
     }
 
@@ -25,7 +25,7 @@ public class MissionUI01 : MonoBehaviour
         //テキスト書き換え(Enterキー）
         if (Input.GetKeyDown(KeyCode.Return) && count == 0)
         {
-            misson01.text = ("まずは正面のキューブに レーザーで攻撃してみましょう。");
+            misson01.text = ("まずは正面のキューブに レーザーで攻撃してみましょう");
             count++;
             for (int i = 0; i < 3; i++)
             {
@@ -35,17 +35,17 @@ public class MissionUI01 : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Return) && count == 1)
         {
-            misson01.text = ("右クリックでスコープモードに移行します。");
+            misson01.text = ("右クリックでスコープモードに 移行します。");
             count++;
         }
         else if (Input.GetKeyDown(KeyCode.Return) && count == 2)
         {
-            misson01.text = ("スコープモードは画面中央に 狙いをつける矢印が表示されます。");
+            misson01.text = ("スコープモードは画面中央に 狙いをつける矢印が 表示されます。");
             count++;
         }
         else if (Input.GetKeyDown(KeyCode.Return) && count == 3)
         {
-            misson01.text = ("この状態で左クリックするとレーザー攻撃を行います。");
+            misson01.text = ("この状態で左クリックすると レーザー攻撃を行います。");
             count++;
         }
         else if (Input.GetKeyDown(KeyCode.Return) && count == 4)
@@ -55,7 +55,7 @@ public class MissionUI01 : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Return) && count == 5)
         {
-            misson01.text = ("以上でレーザー攻撃のテストを終了します。");
+            misson01.text = ("以上でレーザー攻撃のテストを 終了します。");
             count++;
         }
         else if (Input.GetKeyDown(KeyCode.Return) && count == 6

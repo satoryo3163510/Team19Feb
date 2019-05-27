@@ -6,20 +6,26 @@ using UnityEngine.UI;
 
 public class ChangeCamera : MonoBehaviour
 {
+    //一人称カメラと三人称カメラの切り替え
+    //カメラの回転
+
     public GameObject mainCamera;       //三人称カメラ
     public GameObject fpsCamera;        //一人称カメラ
 
     private GameObject playerObject;    //回転の中心となるプレイヤー
-    private float rotateSpeed = 0.5f;   //回転の速さ
+    private float rotateSpeed = 1.0f;   //回転の速さ
     public Image sight;                 //ロックオンサイト
     public bool changeflag;
+    private Camera mainCameraView;
     
     // Start is called before the first frame update
     //開始時は三人称、ScopeModeはオフに
     void Start()
     {
-        playerObject = GameObject.Find("PlayerSenkan");
+        playerObject = GameObject.Find("Player");
         gameObject.GetComponent<ScopeMode>().enabled = false;
+        mainCameraView = GetComponent<Camera>();
+        mainCameraView.fieldOfView = 60;
         sight.enabled = false;
         changeflag = true;
     }
@@ -38,8 +44,7 @@ public class ChangeCamera : MonoBehaviour
         }
     }
 
-    //一人称の時にマウス操作でカメラと同時に旋回することで
-    //三人称のカメラとの違和感を軽減できる？（保留）
+    
     private void RotateCamera()
     {
         //transform.RtateAround()をしようしてメインカメラを回転させる

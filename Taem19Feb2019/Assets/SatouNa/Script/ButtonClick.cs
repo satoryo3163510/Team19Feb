@@ -20,7 +20,7 @@ public class ButtonClick : MonoBehaviour
 
     public void OnClick_T()
     {
-        SceneManager.LoadScene("Tutorial");
+        SceneManager.LoadScene("MainField");
     }
 
     public void OnClick_E()

@@ -5,26 +5,33 @@ using UnityEngine;
 public class EnemyAll : MonoBehaviour
 {
     //エネミー共通
-    public int HP;
+    [SerializeField]
+    int HP;
+    bool death;
     // Start is called before the first frame update
     void Start()
     {
-        
+        death = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (HP < 0)
+        if (HP <= 0)
         {
             Destroy(gameObject);
+            death = true;
         }
     }
     void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.tag == "Bullet")
+        if (col.gameObject.tag == "PlayerBullet")
         {
             HP -= 1;
         }
+    }
+    public bool ReturnBool()
+    {
+        return death;
     }
 }

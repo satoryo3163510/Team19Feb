@@ -4,6 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - PlayerBullet
   - Enemy
   - Bullet
   layers:
@@ -15,12 +16,12 @@ TagManager:
   - UI
   - 
   - 
+  - PostProcessing
+  - Player
+  - PlayerBullet
+  - PlayerShield
   - Enemy
-  - 
-  - 
-  - 
-  - 
-  - 
+  - phantom
   - 
   - 
   - 

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    //プレイヤーの移動、操作スクリプト
     private Rigidbody rb;
 
     //船の速度
@@ -17,9 +18,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float backMaxSpeed = 0.8f;
 
-    //船の全身速度上限
+    //船の前進速度上限
     [SerializeField]
-    private float maxSpeed = 10f;
+    private float maxSpeed = 1.2f;
 
     //船の出力
     [SerializeField]

@@ -7,7 +7,8 @@ public class Enemy_AirCraftCarrier : MonoBehaviour
     public GameObject enemyShip;
     private float timer;
     public float seisei = 5;
-    private int shipCount;
+    public int shipCount;
+    public int jougen;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +19,7 @@ public class Enemy_AirCraftCarrier : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (shipCount < 5)
+        if (shipCount < jougen)
         {
             timer += Time.deltaTime;
             if (timer > seisei)
@@ -29,6 +30,5 @@ public class Enemy_AirCraftCarrier : MonoBehaviour
                 timer = 0;
             }
         }
-        if (shipCount > 5) shipCount = 0;
     }
 }

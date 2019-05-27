@@ -38,7 +38,7 @@ public class Misaill : MonoBehaviour
         var diff = target.position - transform.position;
 
         //加速度を求めてるらしい
-        acceleration += (diff - velocity * period) *1f
+        acceleration += (diff - velocity * period) 
                         / (period * period);
 
         //加速度が一定以上だと追尾を弱くする

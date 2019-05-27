@@ -7,6 +7,8 @@ public class MissileMove : MonoBehaviour
     //ミサイルの挙動
     [SerializeField]
     private float firstSpeed;
+    [SerializeField]
+    private float missileDamage;
     private Rigidbody rb;
     private Vector3 velosity;
     private bool EnemyEntryFlag;
@@ -14,6 +16,8 @@ public class MissileMove : MonoBehaviour
     public Vector3 acceleration;
     private float period = 0.6f;
     public GameObject Ef_explosion;
+    private EnemyHp EH;
+    
 
 
     // Start is called before the first frame update
@@ -56,6 +60,8 @@ public class MissileMove : MonoBehaviour
             Destroy(gameObject);
             var hitEf = Instantiate(Ef_explosion,other.transform);
             Destroy(hitEf,1f);
+            EH = other.collider.GetComponent<EnemyHp>();
+            EH.EnemyDamage(missileDamage);
         }
     }
 

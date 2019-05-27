@@ -15,6 +15,8 @@ public class ScopeMode : MonoBehaviour
     private EnemyHp EH;
     private bool shootOk;
     public float countTime;
+    [SerializeField]
+    private float laserDamage;
 
 
     // Start is called before the first frame update
@@ -85,7 +87,7 @@ public class ScopeMode : MonoBehaviour
            if(hit.collider.gameObject.tag == "Enemy")
             {
                 EH = hit.collider.GetComponent<EnemyHp>();
-                EH.EnemyDamage(40f);
+                EH.EnemyDamage(laserDamage);
             }
         }
     }

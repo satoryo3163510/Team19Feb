@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class Ene_Bullet : MonoBehaviour
 {
+    private PlayerShield PS;
+    [SerializeField]
+    private float EB_damage;
+    private GameObject si_rudo;
+    private GameObject player;
     // Start is called before the first frame update
     void Start()
     {
-        
+       si_rudo= GameObject.Find("si-rudo");
+        player = GameObject.Find("Player");
     }
 
     // Update is called once per frame
@@ -18,18 +24,11 @@ public class Ene_Bullet : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        Destroy(gameObject);
+        if (other.gameObject==si_rudo)
         {
-            Destroy(gameObject);
-            Debug.Log(other);
+            PS = player.GetComponent<PlayerShield>();
+            PS.ShieldDamage(EB_damage);
         }
-        
-    }
-
-    void OnCollisonEnter(Collision other)
-    {
-        if (other.gameObject.tag == "Player")
-            Destroy(gameObject);
-        Debug.Log(other);
     }
 }

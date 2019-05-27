@@ -78,6 +78,7 @@ MonoBehaviour:
   acceleration: {x: 0, y: 0, z: 0}
   Ef_explosion: {fileID: 1150934714579380, guid: 779aa8c25fbd0e1488637639c9fff976,
     type: 3}
+  missileDamage: 50
 --- !u!65 &8678343572911373821
 BoxCollider:
   m_ObjectHideFlags: 0

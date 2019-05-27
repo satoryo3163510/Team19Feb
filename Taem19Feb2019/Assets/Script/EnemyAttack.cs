@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class EnemyAttack : MonoBehaviour
 {
-    public GameObject bullet,phantombullet;
+    public GameObject bullet, phantombullet;
     private float timer;
     public float kankaku = 3;
     public float lifeTime;
@@ -33,7 +33,7 @@ public class EnemyAttack : MonoBehaviour
                     Vector3 force = gameObject.transform.right * bSpeed;
                     bullets1.GetComponent<Rigidbody>().AddForce(force);
                     bullets1.transform.position = muzzles[i].position;
-                    Destroy(bullets1, lifeTime-0.8f);
+                    Destroy(bullets1, lifeTime - 0.3f);
                 }
                 for (int i = 0; i < muzzles.Length; i++)
                 {

@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class Cannon : MonoBehaviour
 {
-    public GameObject originalPart,phantom;
+    public GameObject originalPart, phantom;
     private Transform CT, CB;
     private float time;
-    GameObject part1,part2;
+    GameObject part1, part2;
     bool isShot;
     public int interval = 30;
+    public float lifetime;
+    public float tamahayasa = 500;
     // Start is called before the first frame update
     void Start()
     {
@@ -44,14 +46,16 @@ public class Cannon : MonoBehaviour
                     part1.transform.Rotate(new Vector3(0, 90, 0));
                     part2.transform.Rotate(new Vector3(0, 90, 0));
                     time = 0;
-                    Destroy(part1, 5);
-                    Destroy(part2, 5);
+                    Destroy(part1, lifetime);
+                    Destroy(part2, lifetime);
 
                     GameObject bullets = Instantiate(phantom) as GameObject;
-                    Vector3 force = gameObject.transform.right * 170;
+                    Vector3 force = gameObject.transform.right * tamahayasa;
                     bullets.GetComponent<Rigidbody>().AddForce(force);
+                    bullets.transform.position = gameObject.transform.position;
                     bullets.transform.rotation = gameObject.transform.rotation;
-                    Destroy(bullets,5);
+                    
+                    Destroy(bullets, lifetime);
                 }
             }
         }

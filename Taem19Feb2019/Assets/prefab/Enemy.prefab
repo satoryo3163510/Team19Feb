@@ -3210,7 +3210,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 15
+  m_Radius: 25
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1090914768
 MonoBehaviour:
@@ -3228,7 +3228,7 @@ MonoBehaviour:
   phantombullet: {fileID: 771567580113592378, guid: bf24ffd2cba0d3f4fb2fa5670e4a4748,
     type: 3}
   kankaku: 4
-  lifeTime: 4
+  lifeTime: 7
   muzzles:
   - {fileID: 1743402425}
   - {fileID: 238927345}

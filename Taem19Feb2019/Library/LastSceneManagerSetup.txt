@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/SatouNa/Scene/Result.unity
+- path: Assets/SatouNa/Scene/Irregular.unity
   isLoaded: 1
   isActive: 1

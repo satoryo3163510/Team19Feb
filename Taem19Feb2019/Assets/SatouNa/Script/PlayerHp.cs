@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerHp : MonoBehaviour
 {
@@ -11,19 +12,18 @@ public class PlayerHp : MonoBehaviour
     [SerializeField]
     private float maxHp = 100f;
     public Slider hpGauge;
-    private EasyDire ED;
     private GameObject ed;
     public GameObject EF_Die;
     private int once;
     public GameObject playerModele;
     public GameObject EF_DamageHit;
+    private static bool isDead;          //追加　ゲームオーバーで終了したか
 
     // Start is called before the first frame update
     void Start()
     {
-        ed = GameObject.Find("EasyDirector");
-        ED = ed.GetComponent<EasyDire>();
         playerHp = maxHp;
+        isDead = false;
     }
 
     // Update is called once per frame
@@ -35,6 +35,7 @@ public class PlayerHp : MonoBehaviour
         //プレイヤーのHpが0以下でリザルトへ
         if (playerHp <= 0 &&once==0)
         {
+            isDead = true;
             once++;
             playerModele.SetActive(false);
             var Die_ef = Instantiate(EF_Die,transform.position,Quaternion.identity);
@@ -58,8 +59,13 @@ public class PlayerHp : MonoBehaviour
         }
     }
 
+    public static bool ResultReturn()
+    {
+        return isDead;
+    }
+
     void GoResult()
     {
-        ED.NextResult();
+        SceneManager.LoadScene("Result");
     }
 }

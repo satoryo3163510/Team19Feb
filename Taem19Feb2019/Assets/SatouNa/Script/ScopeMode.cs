@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ScopeMode : MonoBehaviour
 {
+    //概要
     //射撃に関するスクリプト
     public GameObject bullet;               //発射するオブジェクト
     public Transform[] fpsCamera_s;         //発射する場所

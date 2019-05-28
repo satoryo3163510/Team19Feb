@@ -6,10 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class MissionUI04 : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public Text misson01;
-    public GameObject tower;
-    public GameObject shieldEnemy;
+    //概要
+    //ゲームの目的、勝利条件の提示
+    //終了時にステージセレクトシーンに遷移
+
+    public Text misson01;           
+    public GameObject tower;        //タワー（敵拠点）
+    public GameObject shieldEnemy;  //シールド艦（タワーの護衛艦）
     [SerializeField]
     private Vector3[] m_CubePos;
     private int count;

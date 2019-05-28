@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyHp : MonoBehaviour
 {
+    //概要
     //エネミーのHp,消滅関係
     [SerializeField]
     private float enemyHp;

@@ -5,9 +5,11 @@ using UnityEngine.UI;
 
 public class MissionUI00 : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public Text misson01;
-    private int count;
+    //概要
+    //playerの移動説明
+    public Text misson01;   //解説テキスト
+    private int count;      //次ページへ進むEnterのカウント
+
     // Start is called before the first frame update
     void Start()
     {

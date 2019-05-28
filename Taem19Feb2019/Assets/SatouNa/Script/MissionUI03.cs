@@ -5,8 +5,9 @@ using UnityEngine.UI;
 
 public class MissionUI03 : MonoBehaviour
 {
+    //playerのシールド機能の説明
     public Text misson01;
-    public GameObject m_Cube_s;
+    public GameObject m_Cube_s;     //攻撃してくるcube_s
     [SerializeField]
     private Vector3[] m_CubePos;
     private int count;

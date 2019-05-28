@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class CameraTitle : MonoBehaviour
 {
+    //タイトルでカメラを回転させる
     public Transform playership;        //回転のターゲット
-    public float rotateSpeed = 10f;     //回転速度
+    [SerializeField]
+    private float rotateSpeed = 10f;     //回転速度
     
     // Start is called before the first frame update
     void Start()

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class MissionUI02 : MonoBehaviour
 {
+    //playerのミサイル（ボム）の説明
     public Text misson01;
     public GameObject m_Cube;
     [SerializeField]

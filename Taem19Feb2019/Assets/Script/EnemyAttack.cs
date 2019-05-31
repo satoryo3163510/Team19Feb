@@ -10,7 +10,7 @@ public class EnemyAttack : MonoBehaviour
     public float kankaku = 3;
     public float lifeTime;
     public Transform[] muzzles;
-    private float bSpeed = 180;
+    private float bSpeed = 950;
     private bool attackStart;
     private string player = "Player";
     AudioSource audio;
@@ -26,9 +26,7 @@ public class EnemyAttack : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        if (attackStart == true)
-        {
-            if (timer >= kankaku)
+            if (timer >= kankaku && attackStart == true)
             {
                 for (int i = 0; i < muzzles.Length; i++)
                 {
@@ -51,12 +49,6 @@ public class EnemyAttack : MonoBehaviour
                 audio.PlayOneShot(audioShot);
                 timer = 0;
             }
-        }
-        //if(bulletaaaa.retrnaaaa()==true)
-        //{
-        //    Debug.Log(bulletaaaa.retrnaaaa());
-        //    Destroy(bullet);
-        //}
     }
     void OnTriggerEnter(Collider col)
     {

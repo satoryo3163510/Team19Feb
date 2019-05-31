@@ -32,7 +32,8 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        changeCamera = GetComponentInChildren<ChangeCamera>();
+        GameObject camera = GameObject.Find("Main Camera");
+        changeCamera = camera.GetComponentInChildren<ChangeCamera>();
         changeCamera = new ChangeCamera();
     }
 
@@ -42,7 +43,6 @@ public class PlayerController : MonoBehaviour
         //船の現在速度取得
         shipSpeed = Mathf.Abs(rb.velocity.z);
         aaa = changeCamera.ReturnFlag();
-        Debug.Log(aaa + "b");
     }
 
     //物理演算で呼ばれる処理
@@ -54,7 +54,6 @@ public class PlayerController : MonoBehaviour
         switch (aaa)
         {
             case 0:
-                Debug.Log(aaa);
                 //前後移動(速度制限付き)
                 if (move_z > 0)
                 {

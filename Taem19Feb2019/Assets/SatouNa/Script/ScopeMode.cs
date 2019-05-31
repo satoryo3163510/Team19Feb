@@ -82,7 +82,7 @@ public class ScopeMode : MonoBehaviour
         RaycastHit hit;
 
         //rayがhitした場合
-        if (Physics.Raycast(ray,out hit, 40f))
+        if (Physics.Raycast(ray,out hit, 80f))
         {
            if(hit.collider.gameObject.tag == "Enemy")
             {

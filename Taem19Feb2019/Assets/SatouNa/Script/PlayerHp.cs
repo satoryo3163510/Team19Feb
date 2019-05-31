@@ -11,19 +11,21 @@ public class PlayerHp : MonoBehaviour
     [SerializeField]
     private float maxHp = 100f;
     public Slider hpGauge;
-    private EasyDire ED;
-    private GameObject ed;
+    //private EasyDire ED;
+    //private GameObject ed;
     public GameObject EF_Die;
     private int once;
     public GameObject playerModele;
     public GameObject EF_DamageHit;
+    private bool death;
 
     // Start is called before the first frame update
     void Start()
     {
-        ed = GameObject.Find("EasyDirector");
-        ED = ed.GetComponent<EasyDire>();
+        //ed = GameObject.Find("EasyDirector");
+        //ED = ed.GetComponent<EasyDire>();
         playerHp = maxHp;
+        death = false;
     }
 
     // Update is called once per frame
@@ -40,6 +42,7 @@ public class PlayerHp : MonoBehaviour
             var Die_ef = Instantiate(EF_Die,transform.position,Quaternion.identity);
             Destroy(Die_ef,2f);
             Invoke("GoResult", 2f);
+            death = true;
         }
     }
 
@@ -58,12 +61,16 @@ public class PlayerHp : MonoBehaviour
         {
             var damageHit = Instantiate(EF_DamageHit, transform.position, Quaternion.identity);
             Destroy(damageHit, 0.4f);
-            PlayerDamage(2f);
+            PlayerDamage(1f);
         }
     }
 
     void GoResult()
     {
-        ED.NextResult();
+        //ED.NextResult();
+    }
+    public bool Returndeath()
+    {
+        return death;
     }
 }

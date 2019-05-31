@@ -25,7 +25,6 @@ public class T_Cannon : MonoBehaviour
         timer += Time.deltaTime;
         if (timer>=3.0f)
         {
-           
             GameObject bullets = Instantiate(bullet, muzzle.position,look);
             bullets.GetComponent<Rigidbody>().AddForce(transform.forward*speed);
             GameObject ef_laser = Instantiate(EF_laser2, muzzle.position,look);

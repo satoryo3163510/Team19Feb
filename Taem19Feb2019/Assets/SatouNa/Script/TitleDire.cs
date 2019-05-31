@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class TitleDire : MonoBehaviour
 {
-    // Start is called before the first frame update
+    // spacekeyが押されたらステージセレクトシーンへ遷移
     void Start()
     {
         

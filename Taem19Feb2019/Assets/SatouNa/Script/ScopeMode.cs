@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ScopeMode : MonoBehaviour
 {
+    //概要
     //射撃に関するスクリプト
     public GameObject bullet;               //発射するオブジェクト
     public Transform[] fpsCamera_s;         //発射する場所
@@ -17,6 +18,7 @@ public class ScopeMode : MonoBehaviour
     public float countTime;
     [SerializeField]
     private float laserDamage;
+    private GameObject bullets;
 
 
     // Start is called before the first frame update
@@ -71,11 +73,12 @@ public class ScopeMode : MonoBehaviour
         //エフェクト
         for(int i = 0;i < 4; i++)
         {
-            GameObject bullets = Instantiate(bullet) as GameObject;
+            bullets = Instantiate(bullet) as GameObject;
             bullets.transform.position = fpsCamera_s[i].transform.position;
             bullets.transform.rotation = fpsCamera.transform.rotation;
-            Destroy(bullets, 3f);
+            Destroy(bullets, 1f);
         }
+       
   
         //レーザー射撃
         Ray ray = fpsCamera.ScreenPointToRay(center);
@@ -88,6 +91,7 @@ public class ScopeMode : MonoBehaviour
             {
                 EH = hit.collider.GetComponent<EnemyHp>();
                 EH.EnemyDamage(laserDamage);
+                Destroy(bullets,0.4f);
             }
         }
     }

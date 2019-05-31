@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 
 public class ButtonClick : MonoBehaviour
 {
+    public GameObject UiAll;
+    public Text CreditText;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,5 +39,11 @@ public class ButtonClick : MonoBehaviour
     public void OnClick_I()
     {
         SceneManager.LoadScene("Irregular");
+    }
+
+    public void OnClick_C()
+    {
+        CreditText.enabled = true;
+        UiAll.SetActive(false);
     }
 }

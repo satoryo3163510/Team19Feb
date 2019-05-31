@@ -56,11 +56,10 @@ public class MissionUI02 : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Return) && count == 5)
         {
-            misson01.text = ("以上でミサイルの動作テストを 終了します。");
+            misson01.text = ("以上でミサイルの動作テストを 終了します。 次の項目へ進んでください");
             count++;
         }
-        else if (Input.GetKeyDown(KeyCode.Return) && count == 6
-            ||Input.GetKeyDown(KeyCode.Backspace))
+        else if (Input.GetKeyDown(KeyCode.Backspace))
         {
             foreach (GameObject cubes in m_Cubes)
             {

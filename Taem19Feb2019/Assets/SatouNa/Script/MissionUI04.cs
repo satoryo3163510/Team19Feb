@@ -60,20 +60,15 @@ public class MissionUI04 : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Return) && count == 5)
         {
-            misson01.text = ("以上で説明を終了します。 Enter-出撃エリア選択画面 に移行します。");
+            misson01.text = ("以上で説明を終了します。 Backspace-出撃エリア 選択画面に移行します。");
             count++;
         }
-        else if (Input.GetKeyDown(KeyCode.Return) && count == 6
-            || Input.GetKeyDown(KeyCode.Backspace))
+        else if (Input.GetKeyDown(KeyCode.Backspace))
         {
             foreach (GameObject enemy in enemys)
             {
                 Destroy(enemy);
             }
-
-            gameObject.GetComponent<MissionUI00>().enabled = true;
-            gameObject.GetComponent<MissionUI04>().enabled = false;
-
             SceneManager.LoadScene("StageSelect");
         }
     }

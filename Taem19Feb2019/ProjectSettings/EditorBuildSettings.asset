@@ -21,7 +21,7 @@ EditorBuildSettings:
     path: Assets/SatouNa/Scene/Easy.unity
     guid: 9149fb5b9caa2df41bb59ab95c60abbd
   - enabled: 1
-    path: Assets/SatouNa/Scene/Head.unity
+    path: Assets/SatouNa/Scene/Hard.unity
     guid: bd0761855ac8bb74dbfb1d470ceb2322
   - enabled: 1
     path: Assets/SatouNa/Scene/Result.unity

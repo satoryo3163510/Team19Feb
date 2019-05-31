@@ -9,7 +9,6 @@ public class MissionUI00 : MonoBehaviour
     //playerの移動説明
     public Text misson01;   //解説テキスト
     private int count;      //次ページへ進むEnterのカウント
-
     // Start is called before the first frame update
     void Start()
     {
@@ -38,11 +37,10 @@ public class MissionUI00 : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Return) && count == 3)
         {
-            misson01.text = ("以上で基本動作テストを 終了します。");
+            misson01.text = ("以上で基本動作テストを 終了します。 次の項目へ進んでください");
             count++;
         }
-        else if (Input.GetKeyDown(KeyCode.Return) && count == 4 ||
-            Input.GetKeyDown(KeyCode.Backspace))
+        else if (Input.GetKeyDown(KeyCode.Backspace))
         {
             gameObject.GetComponent<MissionUI01>().enabled = true;
             gameObject.GetComponent<MissionUI00>().enabled = false;

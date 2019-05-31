@@ -58,12 +58,11 @@ public class MissionUI01 : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Return) && count == 5)
         {
-            misson01.text = ("以上でレーザー攻撃のテストを 終了します。");
+            misson01.text = ("以上でレーザー攻撃のテストを 終了します。 次の項目へ進んでください");
             count++;
         }
         //バックスペースキーでここまでスキップ可能
-        else if (Input.GetKeyDown(KeyCode.Return) && count == 6
-            ||Input.GetKeyDown(KeyCode.Backspace))
+        else if (Input.GetKeyDown(KeyCode.Backspace))
         {
             //cubeを全削除
             foreach(GameObject cubes in m_Cubes)

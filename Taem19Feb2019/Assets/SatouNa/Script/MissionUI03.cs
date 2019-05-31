@@ -26,7 +26,7 @@ public class MissionUI03 : MonoBehaviour
         //テキスト書き換え(Enterキー）
         if (Input.GetKeyDown(KeyCode.Return) && count == 0)
         {
-            misson01.text = ("スコープモードではない状態で 右クリックでシールドを 展開します。");
+            misson01.text = ("スコープモードではない状態で 左クリックでシールドを 展開します。");
             count++;
             
            m_Cubes = Instantiate(m_Cube_s, m_CubePos[0], Quaternion.identity);
@@ -34,7 +34,7 @@ public class MissionUI03 : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Return) && count == 1)
         {
-            misson01.text = ("シールド展開中に 再度右クリックで シールドを解除します。");
+            misson01.text = ("シールド展開中に 再度左クリックで シールドを解除します。");
             count++;
         }
         else if (Input.GetKeyDown(KeyCode.Return) && count == 2)
@@ -59,11 +59,10 @@ public class MissionUI03 : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Return) && count == 6)
         {
-            misson01.text = ("以上でシールド機能のテストを 終了します。");
+            misson01.text = ("以上でシールド機能のテストを 終了します。 次の項目へ進んでください");
             count++;
         }
-        else if (Input.GetKeyDown(KeyCode.Return) && count == 7||
-            Input.GetKeyDown(KeyCode.Backspace))
+        else if (Input.GetKeyDown(KeyCode.Backspace))
         {
             Destroy(m_Cubes);
 

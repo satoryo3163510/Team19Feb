@@ -9,6 +9,7 @@ public class Ene_Bullet : MonoBehaviour
     private float EB_damage;
     private GameObject si_rudo;
     private GameObject player;
+    public GameObject Ef_shiled;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,11 +25,13 @@ public class Ene_Bullet : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        Destroy(gameObject);
         if (other.gameObject==si_rudo)
         {
+            var ef_shiled = Instantiate(Ef_shiled,transform.position,Quaternion.identity);
+            Destroy(ef_shiled,1f);
             PS = player.GetComponent<PlayerShield>();
             PS.ShieldDamage(EB_damage);
+            Destroy(gameObject);
         }
     }
 }

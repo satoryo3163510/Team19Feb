@@ -30,7 +30,7 @@ public class ButtonClick : MonoBehaviour
 
     public void OnClick_H()
     {
-        SceneManager.LoadScene("Head");
+        SceneManager.LoadScene("Hard");
     }
 
     public void OnClick_I()

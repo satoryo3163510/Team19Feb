@@ -76,8 +76,9 @@ public class ScopeMode : MonoBehaviour
             bullets = Instantiate(bullet) as GameObject;
             bullets.transform.position = fpsCamera_s[i].transform.position;
             bullets.transform.rotation = fpsCamera.transform.rotation;
+            Destroy(bullets, 1f);
         }
-        Destroy(bullets, 1f);
+       
   
         //レーザー射撃
         Ray ray = fpsCamera.ScreenPointToRay(center);

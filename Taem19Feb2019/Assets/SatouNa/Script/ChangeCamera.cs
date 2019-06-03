@@ -68,7 +68,6 @@ public class ChangeCamera : MonoBehaviour
             gameObject.GetComponent<ScopeMode>().enabled = true;
             sight.enabled = true;
             changeflag = 1;
-            Debug.Log(changeflag + "a");
         }
     }
     /// <summary>

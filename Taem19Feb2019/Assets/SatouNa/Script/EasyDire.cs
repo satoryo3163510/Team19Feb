@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 public class EasyDire : MonoBehaviour
 {
     private PlayerHp php;
-    public GameObject cship;
+    [SerializeField]
+    private GameObject cship;
     // Start is called before the first frame update
     void Start()
     {

@@ -57,6 +57,7 @@
      <Compile Include="Assets\SatouNa\Script\ButtonClick.cs" />
      <Compile Include="Assets\SatouNa\Script\CameraTitle.cs" />
      <Compile Include="Assets\SatouNa\Script\ChangeCamera.cs" />
+     <Compile Include="Assets\SatouNa\Script\CreditUI.cs" />
      <Compile Include="Assets\SatouNa\Script\DropEB.cs" />
      <Compile Include="Assets\SatouNa\Script\EasyDire.cs" />
      <Compile Include="Assets\SatouNa\Script\Ene_Bullet.cs" />
@@ -74,8 +75,8 @@
      <Compile Include="Assets\SatouNa\Script\PlayerController.cs" />
      <Compile Include="Assets\SatouNa\Script\PlayerFollowCamera.cs" />
      <Compile Include="Assets\SatouNa\Script\PlayerHp.cs" />
+     <Compile Include="Assets\SatouNa\Script\PlayerPosReset.cs" />
      <Compile Include="Assets\SatouNa\Script\PlayerShield.cs" />
-     <Compile Include="Assets\SatouNa\Script\ResultDire.cs" />
      <Compile Include="Assets\SatouNa\Script\ScopeMode.cs" />
      <Compile Include="Assets\SatouNa\Script\ShieldCollision.cs" />
      <Compile Include="Assets\SatouNa\Script\StageSelectDirector.cs" />
@@ -93,6 +94,7 @@
      <Compile Include="Assets\Script\EnemyAll.cs" />
      <Compile Include="Assets\Script\EnemyAttack.cs" />
      <Compile Include="Assets\Script\EnemyMove.cs" />
+     <Compile Include="Assets\Script\MouseCursor.cs" />
      <Compile Include="Assets\Script\PlayerAudio.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>C:/Users/K017A2103/Desktop/Feb2019team19/Taem19Feb2019/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
